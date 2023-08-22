@@ -115,5 +115,6 @@ int _exit_shell(simpleshell_t *ss_info);
 void _eval_chain(simpleshell_t *ss_info, char *buffer, size_t *pos, size_t start, size_t length);
 /*functions_7.c*/
 int _chain_del(simpleshell_t *ss_info, char *buffer, size_t *pos)
+void _reset_info(simpleshell_t *ss_info);
 
 #endif
