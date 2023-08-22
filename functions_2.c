@@ -16,3 +16,23 @@ return (s);
 return (NULL);
 }
 
+/**
+* _w_stderr – writes the char c to standard error.
+* @c: The character
+* Return: 1 (Success), -1 (Otherwise).
+*/
+int _w_stderr(char c)
+{
+static int a;
+static char buffer[1024];
+
+if (c == -1 || a >= 1024)
+{
+write(2, buffer, a);
+a = 0;
+}
+if (c != -1)
+buffer[a++] = c;
+
+return (1);
+}
