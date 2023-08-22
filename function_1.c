@@ -71,3 +71,23 @@ free(*ostr);
 *ostr = nstr;
 return (1);
 }
+
+/**
+* _putchar – writes char c to standard output.
+* @ch: The char.
+* Return: 1 (Success), -1 (Otherwise)
+*/
+int _putchar(char ch)
+{
+static int a;
+static char buffer[1024];
+
+if (ch == -1 || a >= 1024)
+{
+write(1, buffer, a);
+}
+if (ch != -1)
+buffer[a++] = ch;
+
+return (1);
+}
