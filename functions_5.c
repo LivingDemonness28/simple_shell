@@ -48,3 +48,38 @@ return (0);
 }
 return (1);
 }
+
+/**
+ * _eatoi - convert string to int.
+ * @str: string input.
+ * Return: int (Success), -1 (Otherwise)
+*/
+int _eatoi(char *str)
+{
+int a = 0;
+unsigned long int res = 0;
+
+if (*str == '+')
+{
+str++;
+}
+
+while (str[a] != '\0')
+{
+if (str[a] >= '0' && str[a] <= '9')
+{
+res *= 10;
+res += (str[a] - '0');
+if (res > INT_MAX)
+{
+return (-1);
+}
+}
+else
+{
+return (-1)
+}
+a++;
+}
+return (res);
+}
