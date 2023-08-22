@@ -1,0 +1,6 @@
+#!/bin/bash
+#simple betty code
+
+greeting=Hello
+name=Betty
+echo $greeting $name
