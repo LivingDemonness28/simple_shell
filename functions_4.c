@@ -88,3 +88,20 @@ i++;
 }
 return (0);
 }
+
+/**
+ * _strlen - returns the length of a string
+ * @s: string
+ * Return: length
+ */
+int _strlen(char *str)
+{
+int a = 0;
+
+if (!str)
+return (0);
+
+while (*str++)
+a++;
+return (a);
+}
