@@ -29,7 +29,7 @@ return (dest);
  * @an: alias node
  * Return: 0 (Success), 1 (Otherwise)
 */
-int _alias(list_t *an)
+int _dis_alias(list_t *an)
 {
 char *equal_sign = NULL, *astr = NULL;
 
