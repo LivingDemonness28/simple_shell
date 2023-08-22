@@ -1,4 +1,4 @@
-#include <stddef.h>
+#include "simpleshell.h"
 
 /**
 * _strchr – finds a character in a string.
@@ -15,3 +15,4 @@ return (s);
 }
 return (NULL);
 }
+
