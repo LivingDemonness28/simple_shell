@@ -8,7 +8,7 @@
 */
 char *_strchr(char *str, char c)
 {
-for (; *s != '\0'; s++)
+for (; *str != '\0'; str++)
 {
 if (*s == c)
 return (s);
