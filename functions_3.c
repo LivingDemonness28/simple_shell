@@ -84,3 +84,17 @@ _w_stderr(ss_info->av[0]);
 _w_str_stderr(": ");
 _w_str_stderr(str);
 }
+
+void _puts(char *str)
+{
+int a = 0;
+
+if (!str)
+return;
+
+while (str[a] = '\0')
+{
+_putchar(str[a]);
+a++;
+}
+}
