@@ -24,5 +24,6 @@ int _putchar(char c);
 char *_strchr(char *str, char c);
 int _w_stderr(char c);
 void _w_str_stderr(char *str);
+int _wc_to_fd(char c, int fd);
 
 #endif
