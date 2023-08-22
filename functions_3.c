@@ -80,7 +80,7 @@ _w_str_stderr(ss_info->filename);
 _w_str_stderr(": ");
 _decimalfd(ss_info->line_num, STDERR_FILENO);
 _w_str_stderr(": ");
-_w_stderr(ss_info->av[0]);
+_w_str_stderr(ss_info->av[0]);
 _w_str_stderr(": ");
 _w_str_stderr(str);
 }
