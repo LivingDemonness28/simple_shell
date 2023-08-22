@@ -39,7 +39,7 @@ return (1);
 /**
  * _reset_info - initializes simpleshell_t struct by
  * clearing its members.
- * @ss_info - simpleshell_t struct param.
+ * @ss_info: simpleshell_t struct param.
  * Return: Nothing.
 */
 void _reset_info(simpleshell_t *ss_info)
@@ -48,4 +48,22 @@ ss_info->input_args = NULL;
 ss_info->av = NULL;
 ss_info->cmd_path = NULL;
 ss_info->ac = 0;
+}
+
+/**
+ * _updt_hist - updates the hist index in a
+ * linked list.
+ * @ss_info: simpleshell_t struct param.
+ * Return: the new hist count.
+*/
+int _updt_hist(simpleshell_t *ss_info)
+{
+list_t *n = ss_info->cmd_hist;
+int a = 0;
+
+for (; n; n = n->next)
+{
+n->number = a++;
+}
+return (ss_info->history_count = a);
 }
