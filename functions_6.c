@@ -85,3 +85,37 @@ return (-2);
 ss_info->exit_error = -1;
 return (-2);
 }
+
+/**
+ * _eval_chain - checks whether to continue
+ * chaining based on last status
+ * @ss_info: simpleshell_t struct param
+ * @buffer: the char buffer
+ * @pos: address of current pos in buffer
+ * @start: start pos in buffer
+ * @length: buffer length
+ * Return: Nothing
+ */
+void _eval_chain(simpleshell_t *ss_info, char *buffer, size_t *pos, size_t start, size_t length)
+{
+size_t cp = *pos;
+
+if (ss_info->cmd_type == 2)
+{
+if (ss_info->last_cmd_status)
+{
+buffer[start] = 0;
+cp = length;
+}
+}
+if (ss_info->cmd_type == 1)
+{
+if (!ss_info->last_cmd_status)
+{
+buffer[start] = 0;
+cp = length;
+}
+}
+
+*pos = cp;
+}
