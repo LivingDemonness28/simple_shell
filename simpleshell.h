@@ -20,5 +20,6 @@ char *_strncat(char *dest, char *src, int n);
 int _check_del(char ch, char *del_str);
 int _interact(simpleshell_t *ss_info);
 int _repstr(char **ostr, char *nstr);
+int _putchar(char c);
 
 #endif
