@@ -17,5 +17,6 @@ int rfd;
 
 /*Function prototypes*/
 char *_strncat(char *dest, char *src, int n);
+int _check_del(char ch, char *del_str);
 
 #endif
