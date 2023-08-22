@@ -77,11 +77,11 @@ ss_info->last_cmd_status = 2;
 _eprint(ss_info, "Invalid numeric argument: ");
 _w_str_stdder(ss_info->av[1]);
 _w_stdder('\n');
-return 1;
+return (1);
 }
 ss_info->exit_error = exit_code;
-return -2;
+return (-2);
 }
 ss_info->exit_error = -1;
-return -2;
+return (-2);
 }
