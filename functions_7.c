@@ -1,7 +1,8 @@
 #include "simpleshell.h"
 
 /**
- * _chain_del - 
+ * _chain_del - checks if the current char in the buffer
+ * is a chain delimiter
  * @ss_info: simpleshell_t struct param.
  * @buffer: char buffer.
  * @pos: position in the buffer.
