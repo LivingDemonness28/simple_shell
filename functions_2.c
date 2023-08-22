@@ -54,3 +54,25 @@ for (; str[a] != '\0'; a++)
 _w_stderr(str[a]);
 }
 }
+
+/**
+* _wc_to_fd – writes the c to given fd.
+* @c: the char.
+* @fd: file descriptor.
+* Return: 1 (Success), 0 (Otherwise).
+*/
+int _wc_to_fd(char c, int fd)
+{
+static int a;
+static char buffer[1024];
+
+if (c == -1 || a >= 1024)
+{
+write(fd, buffer, a);
+a = 0;
+}
+if (c != -1)
+buffer[a++] = c;
+
+return (1);
+}
