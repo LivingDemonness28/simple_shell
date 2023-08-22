@@ -56,5 +56,6 @@ char *_strdup(char *str);
 /*functions_4.c*/
 char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
+char *_starts(const char *h, const char *n);
 
 #endif
