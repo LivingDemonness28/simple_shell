@@ -52,3 +52,21 @@ j++;
 dest[i] = '\0';
 return (dest);
 }
+
+/**
+ * _starts - check if string starts with substring.
+ * @h: search string.
+ * @n: substring.
+ * Return: Address of next char (Success), NULL (Otherwise).
+*/
+char *_starts(const char *h, const char *n)
+{
+for (; *n != '\0'; n++, h++)
+{
+if (*n != *h)
+{
+return (NULL);
+}
+}
+return ((char *)h);
+}
