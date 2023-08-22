@@ -74,20 +74,20 @@ return (1);
 
 /**
 * _putchar – writes char c to standard output.
-* @ch: The char.
+* @c: The char.
 * Return: 1 (Success), -1 (Otherwise)
 */
-int _putchar(char ch)
+int _putchar(char c)
 {
 static int a;
 static char buffer[1024];
 
-if (ch == -1 || a >= 1024)
+if (c == -1 || a >= 1024)
 {
 write(1, buffer, a);
 }
-if (ch != -1)
-buffer[a++] = ch;
+if (c != -1)
+buffer[a++] = c;
 
 return (1);
 }
