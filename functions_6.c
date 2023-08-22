@@ -65,7 +65,7 @@ return (NULL);
  * @ss_info - simpleshell_t struct param.
  * Return: exit with exit code.
 */
-int _exit(simpleshell_t *ss_info)
+int _exit_shell(simpleshell_t *ss_info)
 {
 int exit_code;
 if (ss_info->av[1])
