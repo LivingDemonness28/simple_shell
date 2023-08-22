@@ -109,5 +109,6 @@ char *_memset(char *s, char b, unsigned int n);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 /*functions_6.c*/
 void _free_strarr(char **strstr);
+ssize_t _r_buffer(simpleshell_t *ss_info, char *buffer, size_t *size);
 
 #endif
