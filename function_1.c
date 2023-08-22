@@ -22,3 +22,41 @@ dest[i] = src[j];
 dest[i] = '\0';
 return (dest);
 }
+
+check_del
+
+/**
+* _check_del – checks if a char is delimiter.
+* ch: character check.
+* del_str: delimiter string.
+* Return: 1 (Success), 0 (Otherwise)
+*/
+int _check_del(char ch, char *del_str)
+{
+	for (; *del_str != ‘\0’; del_str++)
+	{
+		if (*del_str == ch)
+		{
+			return (1)
+		}
+	}
+	return (0);
+}
+interact
+#include “simpleshell.h”
+/**
+*  _interact – true if shell is interactive mode,
+* @ss_info: simpleshell_t struct param.
+* Return: convert number (Success), 0 (Otherwise)
+*/
+int _interact(simpleshell_t *ss_info)
+{
+	if (isatty(STDIN_FILENO))
+	{
+		if (ss_info->rfd <= 2)
+		{
+			return (1);
+		}
+	}
+	return (0);
+}
