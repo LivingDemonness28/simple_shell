@@ -26,5 +26,6 @@ int _w_stderr(char c);
 void _w_str_stderr(char *str);
 int _wc_to_fd(char c, int fd);
 int _wsfd(char *str, int fd);
+int _decimalfd(int num, int fd);
 
 #endif
