@@ -53,5 +53,7 @@ void _nocomments(char *buffer);
 void _eprint(simpleshell_t *ss_info, char *str);
 void _puts(char *str);
 char *_strdup(char *str);
+/*functions_3.c*/
+char *_strcpy(char *dest, char *src);
 
 #endif
