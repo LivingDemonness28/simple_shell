@@ -61,12 +61,9 @@ return (dest);
 */
 char *_starts(const char *h, const char *n)
 {
-for (; *n != '\0'; n++, h++)
-{
-if (*n != *h)
-{
+while(*n)
+if (*n++ != *h++)
 return (NULL);
-}
-}
+
 return ((char *)h);
 }
