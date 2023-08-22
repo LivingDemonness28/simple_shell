@@ -52,5 +52,6 @@ int _decimalfd(int num, int fd);
 void _nocomments(char *buffer);
 void _eprint(simpleshell_t *ss_info, char *str);
 void _puts(char *str);
+char *_strdup(char *str);
 
 #endif
