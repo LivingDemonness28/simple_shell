@@ -12,6 +12,12 @@
 #include <fcntl.h>
 #include <errno.h>
 
+extern char **environ;
+
+#define EMPTY_INFO_INIT \
+{NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
+		0, 0, 0}
+
 /**
  * struct liststring - singly linked list.
  * @number: the number field.
