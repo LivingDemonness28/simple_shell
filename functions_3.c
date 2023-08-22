@@ -46,3 +46,23 @@ __putchar('0' + curr_dig);
 total++;
 return (total);
 }
+
+/**
+* _nocomments – replaces the 1st instance of ‘#’ with ‘\0’ 
+* @buffer: string address to modify.
+* Return: Nothing.
+*/
+void _nocomments(char *buffer)
+{
+int a = 0;
+
+while (buffer[a] != '\0')
+{
+if (buffer[a] == '#' && (!a || buffer[a - 1] == ' '))
+{
+buffer[a] = '\0';
+break;
+}
+a++;
+}
+}
