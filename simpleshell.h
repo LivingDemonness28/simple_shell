@@ -62,5 +62,6 @@ int _strlen(char *str);
 /*functions_5.c*/
 char *_strncpy(char *dest, char *src, int n);
 int _alias(list_t *n);
+int _eatoi(char *str);
 
 #endif
