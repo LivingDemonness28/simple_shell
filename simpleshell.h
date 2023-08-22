@@ -110,5 +110,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 /*functions_6.c*/
 void _free_strarr(char **strstr);
 ssize_t _r_buffer(simpleshell_t *ss_info, char *buffer, size_t *size);
+char *_envval(simpleshell_t *ss_info, const char *envvar);
 
 #endif
