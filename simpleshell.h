@@ -23,5 +23,6 @@ int _repstr(char **ostr, char *nstr);
 int _putchar(char c);
 char *_strchr(char *str, char c);
 int _w_stderr(char c);
+void _w_str_stderr(char *str);
 
 #endif
