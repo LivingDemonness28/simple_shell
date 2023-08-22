@@ -57,3 +57,16 @@ return (1);
 }
 return (0);
 }
+
+/**
+* _repstr – replaces a string.
+* @ostr: old str address.
+* @nstr: new str.
+* Return: 1 (Success), 0 (Otherwise)
+*/
+int _repstr(char **ostr, char *nstr)
+{
+free(*ostr);
+*ostr = nstr;
+return (1);
+}
