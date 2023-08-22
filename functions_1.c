@@ -22,3 +22,21 @@ dest[i] = src[j];
 dest[i] = '\0';
 return (dest);
 }
+
+/**
+* _check_del – checks if a char is delimiter.
+* ch: character check.
+* del_str: delimiter string.
+* Return: 1 (Success), 0 (Otherwise)
+*/
+int _check_del(char ch, char *del_str)
+{
+for (; *del_str != '\0'; del_str++)
+{
+if (*del_str == ch)
+{
+return (1);
+}
+}
+return (0);
+}
