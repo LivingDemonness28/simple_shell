@@ -58,6 +58,6 @@ char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 char *_starts(const char *h, const char *n);
 int _strcmp(char *str1, char *str2);
-int _strlen(char *s);
+int _strlen(char *str);
 
 #endif
