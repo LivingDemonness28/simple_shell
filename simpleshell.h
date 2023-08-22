@@ -35,18 +35,22 @@ int rfd;
 } simpleshell_t;
 
 /*Function prototypes*/
+/*functions_1.c*/
 char *_strncat(char *dest, char *src, int n);
 int _check_del(char ch, char *del_str);
 int _interact(simpleshell_t *ss_info);
 int _repstr(char **ostr, char *nstr);
 int _putchar(char c);
+/*functions_2.c*/
 char *_strchr(char *str, char c);
 int _w_stderr(char c);
 void _w_str_stderr(char *str);
 int _wc_to_fd(char c, int fd);
 int _wsfd(char *str, int fd);
+/*functions_3.c*/
 int _decimalfd(int num, int fd);
 void _nocomments(char *buffer);
 void _eprint(simpleshell_t *ss_info, char *str);
+void _puts(char *str);
 
 #endif
