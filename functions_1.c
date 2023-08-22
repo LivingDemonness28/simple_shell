@@ -40,3 +40,20 @@ return (1);
 }
 return (0);
 }
+
+/**
+*  _interact – true if shell is interactive mode,
+* @ss_info: simpleshell_t struct param.
+* Return: convert number (Success), 0 (Otherwise)
+*/
+int _interact(simpleshell_t *ss_info)
+{
+if (isatty(STDIN_FILENO))
+{
+if (ss_info->rfd <= 2)
+{
+return (1);
+}
+}
+return (0);
+}
