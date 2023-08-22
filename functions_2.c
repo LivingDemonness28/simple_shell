@@ -76,3 +76,23 @@ buffer[a++] = c;
 
 return (1);
 }
+
+/**
+* _wsfd – writes str to given fd.
+* @str: the string.
+* @fd: file descriptor.
+* Return: num of chars written to fd.
+*/
+int _wsfd(char *str, int fd)
+{
+int a;
+
+if (!str)
+return (0);
+
+while (*str++)
+{
+a += _wc_to_fd(str, fd);
+}
+return (a);
+}
