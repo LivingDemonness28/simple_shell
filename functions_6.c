@@ -39,3 +39,23 @@ if (rbytes >= 0)
 
 return (rbytes);
 }
+
+/**
+ * _getenv - gets the value of an environ variable
+ * @ss_info: simpleshell_t struct param.
+ * @envvar: pointer to env var name
+ * Return: the env var val (Success), NULL (Otherwise)
+ */
+char *_envval(simpleshell_t *ss_info, const char *envvar)
+{
+list_t *n = ss_info->local_env_list;
+char *val_ptr;
+
+for (; n; n = n->next)
+{
+val_ptr = _starts(n->string, envvar);
+if (val_ptr && *val_ptr)
+return (val_ptr);
+}
+return (NULL);
+}
