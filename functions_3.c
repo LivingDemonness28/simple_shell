@@ -1,18 +1,48 @@
+#include "simpleshell.h"
+
 /**
-* _putchar – writes char c to standard output.
-* @c: The char.
-* Return: 1 (Success), -1 (Otherwise)
+* _decimalfd – prints a decimal (integer) num (base 10)
+* to a file descriptor.
+* @num: input integer.
+* @fd: file descriptor.
+* Return: num of chars printed.
 */
-int _putchar(char c)
+int _decimalfd(int num, int fd)
 {
-	static int a;
-	static char buffer[1024];
-	
-	if (c == -1 || a >= 1024)
-	{
-		write(1, buffer, a);
-	}
-	if (c != -1)
-		buffer[a++] = c;
-	return (1);
+int (*__putchar)(char) = _putchar;
+int a, total = 0;
+unsigned int abs_val, curr_dig;
+
+if (fd == STDERR_FILENO)
+{
+__putchar = _w_stderr;
+}
+
+if (num < 0)
+{
+abs_val = -num;
+__putchar('-');
+total++;
+}
+else
+{
+abs_val = num;
+}
+
+curr_dig = abs_val;
+a = 1000000000;
+while (a > 1)
+{
+if (abs_val / a)
+{
+__putchar('0' + curr_dig / a);
+total++;
+}
+
+curr_dig %= a;
+a /= 10;
+}
+__putchar('0' + curr_dig);
+total++;
+return (total);
 }
