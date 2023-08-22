@@ -26,19 +26,47 @@ struct liststring *next;
 } list_t;
 
 /**
- * struct shellinfo - contains arguments to pass
- * info into func
+ * struct shellinfo - contains false args to
+ * pass into a function.
+ * @input_args: a string generated from getline contain arguments.
  * @av: array of strings generated from arguments.
+ * @cmd_path: string path for current command.
+ * @ac: argument count.
  * @line_num: error number.
+ * @exit_error: the error number for exit function.
+ * @line_count_tracker: on count this line of input.
  * @filename: program filename.
+ * @local_env_list: linked list local copy of environ.
+ * @custom_env: custom modified environment.
+ * @cmd_hist: history node.
+ * @alias_node: aliad node.
+ * @env_mod: modified custom environment.
+ * @last_cmd_status: return status of the last executed command.
+ * @command_buf: pointer address to command_buf, on if chaining.
+ * @cmd_type:  CMD_type ||, &&, :
  * @rfd: the fd where we read line input from.
+ * @history_count: hist line number count.
 */
 typedef struct shellinfo
 {
+char *input_args;
 char **av;
+char *cmd_path;
+int ac;
 unsigned int line_num;
+int exit_error;
+int line_count_tracker;
 char *filename;
+list_t *local_env_list;
+list_t *cmd_hist;
+list_t *alias_node;
+char **custom_env;
+int env_mod;
+int last_cmd_status;
+char **command_buf;
+int cmd_type;
 int rfd;
+int history_count;
 } simpleshell_t;
 
 /*Function prototypes*/
