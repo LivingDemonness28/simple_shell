@@ -6,6 +6,19 @@
 #include <stddef.h>
 
 /**
+ * struct liststring - singly linked list.
+ * @number: the number field.
+ * @string: string.
+ * @next: points to next node.
+*/
+typedef struct liststring
+{
+char *string;
+int number;
+struct liststring *next;
+} list_t;
+
+/**
  * struct shellinfo - contains arguments to pass
  * info into func
  * @rfd: the fd from which to read line, input.
