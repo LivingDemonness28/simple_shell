@@ -36,3 +36,21 @@ buffer[a++] = c;
 
 return (1);
 }
+
+/**
+* _w_str_stdder – writes the string to standard error.
+* @str: the string.
+* Return: Nothing.
+*/
+void _w_str_stderr(char *str)
+{
+int a = 0;
+
+if (!str)
+return;
+
+for (; str[a] != '\0'; a++)
+{
+_w_stderr(str[a]);
+}
+}
