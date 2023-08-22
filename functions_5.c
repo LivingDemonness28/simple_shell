@@ -23,3 +23,28 @@ j++;
 }
 return (dest);
 }
+
+/**
+ * _alias - displays an alias string.
+ * @an: alias node
+ * Return: 0 (Success), 1 (Otherwise)
+*/
+int _alias(list_t *an)
+{
+char *equal_sign = NULL, *astr = NULL;
+
+if (an)
+{
+equal_sign = _strchr(an->string, '=');
+while (astr <= equal_sign)
+{
+_putchar(*astr);
+astr++;
+}
+_putchar('\'');
+_puts(equal_sign + 1);
+_puts("'\n");
+return (0);
+}
+return (1);
+}
