@@ -21,10 +21,16 @@ struct liststring *next;
 /**
  * struct shellinfo - contains arguments to pass
  * info into func
- * @rfd: the fd from which to read line, input.
+ * @av: array of strings generated from arguments.
+ * @line_num: error number.
+ * @filename: program filename.
+ * @rfd: the fd where we read line input from.
 */
 typedef struct shellinfo
 {
+char **av;
+unsigned int line_num;
+char *filename;
 int rfd;
 } simpleshell_t;
 
@@ -41,5 +47,6 @@ int _wc_to_fd(char c, int fd);
 int _wsfd(char *str, int fd);
 int _decimalfd(int num, int fd);
 void _nocomments(char *buffer);
+void _eprint(simpleshell_t *ss_info, char *str);
 
 #endif
