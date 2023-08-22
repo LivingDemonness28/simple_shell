@@ -92,7 +92,7 @@ return (0);
 
 while (*str++)
 {
-a += _wc_to_fd(str, fd);
+a += _wc_to_fd(*str, fd);
 }
 return (a);
 }
