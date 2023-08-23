@@ -222,7 +222,7 @@ size_t a = 0;
 while (environ[a])
 {
 _append_node(&n, environ[a], 0);
-a++
+a++;
 }
 ss_info->local_env_list = n;
 return (0);
