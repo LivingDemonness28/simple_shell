@@ -126,6 +126,7 @@ list_t *_unshift_node(list_t **h, const char *str, int num);
 size_t _listlen(const list_t *head);
 list_t *_prefix_node(list_t *h, char *start, char c)
 /*functions_9.c*/
-ssize_t node_ind(list_t *h, list_t *n);
+ssize_t _node_ind(list_t *h, list_t *n);
+size_t _lprint(const list_t *head);
 
 #endif
