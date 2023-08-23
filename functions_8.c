@@ -85,7 +85,7 @@ if (!nh)
 return (NULL);
 
 _memset((void *)nh, 0, sizeof(list_t));
-nh->num = num;
+nh->number = num;
 if (str)
 {
 nh->string = _strdup(str);
