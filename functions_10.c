@@ -74,7 +74,7 @@ int a = 0, b = 0, c, d, word_count = 0;
 char **s;
 
 if (str == NULL || str[0] == 0)
-return NULL;
+return (NULL);
 
 if (!del)
 del = " ";
@@ -87,11 +87,11 @@ a++;
 }
 
 if (word_count == 0)
-return NULL;
+return (NULL);
 
 s = malloc((1 + word_count) * sizeof(char *));
 if (!s)
-return NULL;
+return (NULL);
 
 a = 0;
 b = 0;
@@ -114,7 +114,7 @@ free(s[d]);
 d++;
 }
 free(s);
-return NULL;
+return (NULL);
 }
 
 d = 0;
@@ -128,5 +128,72 @@ s[b][d] = 0;
 b++;
 }
 s[b] = NULL;
-return s;
+return (s);
+}
+
+/**
+ * _strtow_2 - splits a string into words.
+ * @str: input string.
+ * @del: delimiter string.
+ * Return: ptr to arr of str (Success), NULL (Otherwise).
+*/
+char **_strtow_2(char *str, char del)
+{
+int a = 0, b = 0, c, d, numwords = 0;
+char **s;
+
+if (str == NULL || str[0] == 0)
+return (NULL);
+
+for (a = 0; str[a] != '\0'; a++)
+{
+if ((str[a] != del && str[a + 1] == del) ||
+(str[a] != del && !str[a + 1]) || str[a + 1] == del)
+numwords++;
+}
+
+if (numwords == 0)
+return (NULL);
+
+s = malloc((1 + numwords) * sizeof(char *));
+if (!s)
+return (NULL);
+
+a = 0;
+b = 0;
+while (b < numwords)
+{
+while (str[a] == del && str[a] != del)
+a++;
+
+c = 0;
+while (str[a + c] != del && str[a + c] && str[a + c] != del)
+c++;
+
+s[b] = malloc((c + 1) * sizeof(char));
+if (!s[b])
+{
+d = 0;
+while (d < b)
+{
+free(s[d]);
+d++;
+}
+free(s);
+return (NULL);
+}
+
+d = 0;
+while (d < c)
+{
+s[b][d] = str[a];
+a++;
+d++;
+}
+s[b][d] = 0;
+b++;
+}
+
+s[b] = NULL;
+return (s);
 }
