@@ -40,7 +40,7 @@ return NULL;
 a = 0;
 while (n)
 {
-str = malloc(_strlen(n->str) + 1);
+str = malloc(_strlen(n->string) + 1);
 if (!str)
 {
 for (b = 0; b < a; b++)
@@ -49,7 +49,7 @@ free(strarr);
 return NULL;
 }
 
-str = _strcpy(str, n->str);
+str = _strcpy(str, n->string);
 strarr[a] = str;
 a++;
 n = n->next;
