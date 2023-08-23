@@ -105,7 +105,7 @@ a++;
  * Return: pointer to the duplicated string,
  * or NULL if insufficient memory
  */
-char *_strdup(char *str)
+char *_strdup(const char *str)
 {
 char *dup;
 int length = 0, i;
