@@ -100,3 +100,35 @@ _strcat(buffer, "/");
 _strcat(buffer, ".ss_history");
 return (buffer);
 }
+
+/**
+ * _w_hist - creates a file, or appends to
+ * an existing file
+ * @ss_info: simpleshell_t struct param
+ * Return: 1 (Success), -1 (Otherwise)
+ */
+int _w_hist(simpleshell_t *ss_info)
+{
+char *filename = _histfile(ss_info);
+ssize_t fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0644);
+list_t *n = NULL;
+
+if (!filename)
+return (-1);
+
+free(filename);
+if (fd == -1)
+return (-1);
+
+n = ss_info->cmd_hist;
+while (n)
+{
+_wsfd(n->str, fd);
+_wc_to_fd('\n', fd);
+n = n->next;
+}
+
+_wc_to_fd(-1, fd);
+close(fd);
+return (1);
+}
