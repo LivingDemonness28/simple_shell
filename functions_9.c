@@ -66,7 +66,7 @@ return strarr;
  * @histcount: history line count.
  * Return: 0 (Always)
 */
-_apnd_hist_list(simpleshell_t *ss_info, char *buffer, int histcount)
+int _apnd_hist_list(simpleshell_t *ss_info, char *buffer, int histcount)
 {
 list_t *n = NULL;
 
