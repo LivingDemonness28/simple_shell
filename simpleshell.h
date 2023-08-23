@@ -133,5 +133,6 @@ char *_histfile(simpleshell_t *ss_info);
 int _w_hist(simpleshell_t *ss_info);
 /*functions_10.c*/
 int _r_hist(simpleshell_t *ss_info);
+char **_strtow_1(char *str, char *del);
 
 #endif
