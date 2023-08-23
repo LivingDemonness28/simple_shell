@@ -67,3 +67,22 @@ n->number = a++;
 }
 return (ss_info->history_count = a);
 }
+
+/**
+ * _print_str_ele - print only the str element
+ * of a list_t linked list.
+ * @head: pointer to first node of the linked list.
+ * Return: Size of list.
+*/
+size_t _print_str_ele(const list_t *head)
+{
+size_t a = 0;
+
+for (; head; head = head->next)
+{
+_puts(head->string ? head->string : "(nil)");
+_puts("\n");
+a++;
+}
+return (a);
+}
