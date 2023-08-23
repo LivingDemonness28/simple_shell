@@ -18,3 +18,43 @@ a++;
 }
 return (-1);
 }
+
+/**
+ * _strarr - returns an array of strings.
+ * @h: head of list.
+ * Return: string array
+*/
+char **_strarr(list_t *h)
+{
+list_t *n = h;
+size_t a = _listlen(h), b;
+char **strarr = malloc(sizeof(char *) * (a + 1));
+char *str;
+
+if (!h || !a)
+return NULL;
+
+if (!strarr)
+return NULL;
+
+a = 0;
+while (n)
+{
+str = malloc(_strlen(n->str) + 1);
+if (!str)
+{
+for (b = 0; b < a; b++)
+free(strarr[b]);
+free(strarr);
+return NULL;
+}
+
+str = _strcpy(str, n->str);
+strarr[a] = str;
+a++;
+n = n->next;
+}
+
+strarr[a] = NULL;
+return strarr;
+}
