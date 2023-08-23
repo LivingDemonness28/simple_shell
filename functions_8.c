@@ -40,12 +40,12 @@ if (!nn)
 return NULL;
 
 _memset((void *)nn, 0, sizeof(list_t));
-nn->num = num;
+nn->number = num;
 
 if (str)
 {
-nn->str = _strdup(str);
-if (!nn->str)
+nn->string = _strdup(str);
+if (!nn->string)
 {
 free(nn);
 return (NULL);
@@ -88,7 +88,7 @@ _memset((void *)nh, 0, sizeof(list_t));
 nh->num = num;
 if (str)
 {
-nh->str = _strdup(str);
+nh->string = _strdup(str);
 if (!nh->str)
 {
 free(nh);
