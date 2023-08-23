@@ -34,14 +34,12 @@ list_t *_append_node(list_t **h, const char *str, int num)
 list_t *nn = malloc(sizeof(list_t)), *n = *h;
 
 if (!h)
-return NULL;
+return (NULL);
 
 if (!nn)
-return NULL;
-
+return (NULL);
 _memset((void *)nn, 0, sizeof(list_t));
 nn->number = num;
-
 if (str)
 {
 nn->string = _strdup(str);
@@ -51,19 +49,14 @@ free(nn);
 return (NULL);
 }
 }
-
 if (n)
 {
-for (; n->next; n = n->next)
-{
-}
+for (n->next)
+n = n->next;
 n->next = nn;
 }
 else
-{
 *h = nn;
-}
-
 return (nn);
 }
 
