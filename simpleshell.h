@@ -119,5 +119,7 @@ void _reset_info(simpleshell_t *ss_info);
 int _updt_hist(simpleshell_t *ss_info);
 size_t _print_str_ele(const list_t *head);
 int _del_node_at_ind(list_t **h, unsigned int ind);
+/*functions_8.c*/
+void _clear_list(list_t **hp);
 
 #endif
