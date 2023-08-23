@@ -109,3 +109,24 @@ for (; head; head = head->next, a++)
 
 return (a);
 }
+
+/**
+ * _prefix_node - returns node whose string
+ * starts with a prefix
+ * @h: head of list.
+ * @start: string to match.
+ * @c: next char after prefix to match.
+ * Return: match node (Success), NULL (Otherwise)
+*/
+list_t *_prefix_node(list_t *h, char *start, char c)
+{
+char *a = NULL;
+
+for (; h; h = h->next)
+{
+a = _starts(h->string, start);
+if (a && ((c == -1) || (*a == c)))
+return (h);
+}
+return (NULL);
+}
