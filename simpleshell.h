@@ -124,5 +124,6 @@ void _clear_list(list_t **hp);
 list_t *_append_node(list_t **h, const char *str, int num);
 list_t *_unshift_node(list_t **h, const char *str, int num);
 size_t _listlen(const list_t *head);
+list_t *_prefix_node(list_t *h, char *start, char c)
 
 #endif
