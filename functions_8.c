@@ -78,7 +78,7 @@ nh->number = num;
 if (str)
 {
 nh->string = _strdup(str);
-if (!nh->str)
+if (!nh->string)
 {
 free(nh);
 return (NULL);
