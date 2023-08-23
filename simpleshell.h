@@ -117,5 +117,6 @@ void _eval_chain(simpleshell_t *ss_info, char *buffer, size_t *pos, size_t start
 int _chain_del(simpleshell_t *ss_info, char *buffer, size_t *pos)
 void _reset_info(simpleshell_t *ss_info);
 int _updt_hist(simpleshell_t *ss_info);
+size_t _print_str_ele(const list_t *head);
 
 #endif
