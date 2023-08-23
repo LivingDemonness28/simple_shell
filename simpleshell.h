@@ -121,5 +121,6 @@ size_t _print_str_ele(const list_t *head);
 int _del_node_at_ind(list_t **h, unsigned int ind);
 /*functions_8.c*/
 void _clear_list(list_t **hp);
+list_t *append_node(list_t **h, const char *str, int num);
 
 #endif
