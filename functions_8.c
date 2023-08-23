@@ -31,33 +31,29 @@ free(n);
 */
 list_t *_append_node(list_t **h, const char *str, int num)
 {
-list_t *nn = malloc(sizeof(list_t)), *n = *h;
+list_t *nh = malloc(sizeof(list_t));
 
 if (!h)
 return (NULL);
 
-if (!nn)
+if (!nh)
 return (NULL);
-_memset((void *)nn, 0, sizeof(list_t));
-nn->number = num;
+
+_memset((void *)nh, 0, sizeof(list_t));
+nh->number = num;
+
 if (str)
 {
-nn->string = _strdup(str);
-if (!nn->string)
+nh->string = _strdup(str);
+if (!nh->string)
 {
-free(nn);
+free(nh);
 return (NULL);
 }
 }
-if (n)
-{
-for (n->next)
-n = n->next;
-n->next = nn;
-}
-else
-*h = nn;
-return (nn);
+nh->next = *h;
+*h = nh;
+return (nh);
 }
 
 /**
