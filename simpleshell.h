@@ -130,5 +130,6 @@ ssize_t _node_ind(list_t *h, list_t *n);
 char **_strarr(list_t *h);
 int _apnd_hist_list(simpleshell_t *ss_info, char *buffer, int histcount);
 char *_histfile(simpleshell_t *ss_info);
+int _w_hist(simpleshell_t *ss_info);
 
 #endif
