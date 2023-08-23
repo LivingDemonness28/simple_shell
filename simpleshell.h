@@ -131,5 +131,7 @@ char **_strarr(list_t *h);
 int _apnd_hist_list(simpleshell_t *ss_info, char *buffer, int histcount);
 char *_histfile(simpleshell_t *ss_info);
 int _w_hist(simpleshell_t *ss_info);
+/*functions_10.c*/
+int _r_hist(simpleshell_t *ss_info);
 
 #endif
