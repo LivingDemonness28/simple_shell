@@ -151,49 +151,39 @@ if ((str[a] != del && str[a + 1] == del) ||
 (str[a] != del && !str[a + 1]) || str[a + 1] == del)
 numwords++;
 }
-
 if (numwords == 0)
 return (NULL);
 
-s = malloc((1 + numwords) * sizeof(char *));
+s = malloc((1 + numwords) *sizeof(char *));
 if (!s)
 return (NULL);
 
-a = 0;
-b = 0;
-while (b < numwords)
+for (b = 0; b < numwords; b++)
 {
-while (str[a] == del && str[a] != del)
-a++;
+while (a = 0; str[a] == del && str[a] != del; a++)
+;
 
-c = 0;
-while (str[a + c] != del && str[a + c] && str[a + c] != del)
-c++;
+for (c = 0; str[a + c] != del && str[a + c] && str[a + c] != del; c++)
+;
 
 s[b] = malloc((c + 1) * sizeof(char));
 if (!s[b])
 {
-d = 0;
-while (d < b)
+for (d = 0; d < b; d++)
 {
 free(s[d]);
-d++;
 }
 free(s);
 return (NULL);
 }
 
-d = 0;
-while (d < c)
+for (d = 0; d < c; d++)
 {
 s[b][d] = str[a];
 a++;
-d++;
 }
 s[b][d] = 0;
-b++;
 }
-
 s[b] = NULL;
 return (s);
 }
