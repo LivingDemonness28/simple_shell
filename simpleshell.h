@@ -70,6 +70,7 @@ list_t *alias_node;
 char **custom_env;
 int env_mod;
 int last_cmd_status;
+
 char **command_buf;
 int cmd_type;
 int rfd;
