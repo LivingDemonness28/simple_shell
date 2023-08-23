@@ -197,3 +197,14 @@ b++;
 s[b] = NULL;
 return (s);
 }
+
+/**
+ * _currenv - print current env
+ * @ss_info: simpleshell_t struct param.
+ * Return: 0 (Always)
+*/
+int _currenv(simpleshell_t *ss_info)
+{
+_print_str_ele(ss_info->local_env_list);
+return (0);
+}
