@@ -5,7 +5,7 @@
  * @sn: signal number
  * Return: Nothing 
 */
-_block_ctrlc(__attribute__((unused))int sn)
+void _block_ctrlc(__attribute__((unused))int sn)
 {
 _puts("\n");
 _puts("ss$ ");
