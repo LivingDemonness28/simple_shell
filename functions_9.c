@@ -123,7 +123,7 @@ return (-1);
 n = ss_info->cmd_hist;
 while (n)
 {
-_wsfd(n->str, fd);
+_wsfd(n->string, fd);
 _wc_to_fd('\n', fd);
 n = n->next;
 }
