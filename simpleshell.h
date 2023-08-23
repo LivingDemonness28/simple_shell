@@ -136,5 +136,6 @@ int _r_hist(simpleshell_t *ss_info);
 char **_strtow_1(char *str, char *del);
 char **_strtow_2(char *str, char del);
 int _currenv(simpleshell_t *ss_info);
+int _init_env_list(simpleshell_t *ss_info);
 
 #endif
