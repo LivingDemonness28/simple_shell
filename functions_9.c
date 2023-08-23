@@ -79,3 +79,24 @@ ss_info->cmd_hist = n;
 
 return (0);
 }
+
+/**
+ * _histfile - gets the history file
+ * @ss_info: simpleshell_t struct param
+ * Return: allocated string containing history file
+ */
+char *_histfile(simpleshell_t *ss_info)
+{
+char *buffer, *home_dir = _envval(ss_info, "HOME=");
+
+if (!home_dir)
+return (NULL);
+buffer = malloc(sizeof(char) * (_strlen(home_dir) + _strlen(".ss_history") + 2));
+if (!buffer)
+return (NULL);
+buffer[0] = 0;
+_strcpy(buffer, home_dir);
+_strcat(buffer, "/");
+_strcat(buffer, ".ss_history");
+return (buffer);
+}
