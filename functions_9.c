@@ -58,3 +58,24 @@ n = n->next;
 strarr[a] = NULL;
 return strarr;
 }
+
+/**
+ * _apnd_hist_list - adds entry to hist list.
+ * @ss_info: simpleshell_t struct param.
+ * @buffer: the buffer.
+ * @histcount: history line count.
+ * Return: 0 (Always)
+*/
+_apnd_hist_list(simpleshell_t *ss_info, char *buffer, int histcount)
+{
+list_t *n = NULL;
+
+if (ss_info->cmd_hist)
+n = ss_info->cmd_hist;
+_append_node(&n, buffer, histcount);
+
+if (!ss_info->cmd_hist)
+ss_info->cmd_hist = n;
+
+return (0);
+}
