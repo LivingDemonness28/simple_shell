@@ -86,3 +86,41 @@ a++;
 }
 return (a);
 }
+
+/**
+ * _del_node_at_ind - deletes node at an index.
+ * @h: head of linked list.
+ * @ind: index of the node to delete.
+ * Return: 1 (Success), 0 (Otherwise)
+*/
+int _del_node_at_ind(list_t **h, unsigned int ind)
+{
+list_t *n, *pn;
+unsigned int a = 0;
+
+if (!h || !*h)
+return (0);
+
+if (ind == 0)
+{
+n = *h;
+*h = (*h)->next;
+free(n->string);
+free(n);
+return (1);
+}
+
+n = *h;
+for (; n; a++, n = n->next)
+{
+if (a == ind)
+{
+pn->next = n->next;
+free(n->string);
+free(n);
+return (1);
+}
+pn = n;
+}
+return (0);
+}
