@@ -208,3 +208,22 @@ int _currenv(simpleshell_t *ss_info)
 _print_str_ele(ss_info->local_env_list);
 return (0);
 }
+
+/**
+ * _init_env_list - fills an env linked list with vals.
+ * @ss_info: simpleshell_t struct param.
+ * Return: 0 (Always)
+*/
+int _init_env_list(simpleshell_t *ss_info)
+{
+list_t *n = NULL;
+size_t a = 0;
+
+while (environ[a])
+{
+_append_node(&n, environ[a], 0);
+a++
+}
+ss_info->local_env_list = n;
+return (0);
+}
