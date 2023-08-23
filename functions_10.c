@@ -89,7 +89,7 @@ a++;
 if (word_count == 0)
 return (NULL);
 
-s = malloc((1 + word_count) * sizeof(char *));
+s = malloc((1 + word_count) *sizeof(char *));
 if (!s)
 return (NULL);
 
