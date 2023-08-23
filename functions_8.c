@@ -94,3 +94,18 @@ nh->next = *h;
 *h = nh;
 return (nh);
 }
+
+/**
+ * list_len - Determines the length of a linked list.
+ * @head: head of list.
+ * Return: The size of the linked list.
+ */
+size_t _listlen(const list_t *head)
+{
+size_t a = 0;
+
+for (; head; head = head->next, a++)
+;
+
+return (a);
+}
