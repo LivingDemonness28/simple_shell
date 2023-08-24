@@ -20,3 +20,14 @@ head = head->next;
 }
 return (a);
 }
+
+/**
+ * _hprint - prints cmd hist, one per line.
+ * @ss_info: simpleshell_t struct param.
+ * Return: 0 (Always)
+*/
+int _hprint(simpleshell_t *ss_info)
+{
+_lprint(ss_info->cmd_hist);
+return (0);
+}
