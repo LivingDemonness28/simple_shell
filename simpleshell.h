@@ -147,5 +147,6 @@ int _add_alias(simpleshell_t *ss_info, char *str);
 int _alias(simpleshell_t *ss_info);
 /*functions_12.c*/
 char **_copy_env(simpleshell_t *ss_info);
+int _del_env(simpleshell_t *ss_info, char *envvar);
 
 #endif
