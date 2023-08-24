@@ -63,3 +63,32 @@ close(ss_info->rfd);
 _putchar(-1);
 }
 }
+
+/**
+ * _init_info - sets simpleshell_t struct
+ * @ss_info: simpleshell_t struct param.
+ * @argv: arg vector.
+ * Return: Nothing.
+*/
+void _init_info(simpleshell_t *ss_info, char **argv)
+{
+int a = 0;
+
+ss_info->filename = argv[0];
+if (ss_info->input_args)
+{
+ss_info->av = _strtow_1(ss_info->input_args, "\t");
+if (!ss_info->av)
+{
+ss_info->av[0] = _strdup(ss_info->input_args);
+ss_info->av[1] = NULL;
+}
+}
+while (ss_info->av && ss_info->av[a])
+{
+a++;
+}
+ss_info->ac = a;
+_repalias(ss_info);
+_repvars(ss_info);
+}
