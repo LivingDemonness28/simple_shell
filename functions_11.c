@@ -3,7 +3,7 @@
 /**
  * _block_ctrlc - blocks ctrl-c
  * @sn: signal number
- * Return: Nothing 
+ * Return: Nothing
 */
 void _block_ctrlc(__attribute__((unused))int sn)
 {
