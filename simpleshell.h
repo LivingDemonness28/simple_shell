@@ -113,7 +113,8 @@ void _free_strarr(char **strstr);
 ssize_t _r_buffer(simpleshell_t *ss_info, char *buffer, size_t *size);
 char *_envval(simpleshell_t *ss_info, const char *envvar);
 int _exit_shell(simpleshell_t *ss_info);
-void _eval_chain(simpleshell_t *ss_info, char *buffer, size_t *pos, size_t start, size_t length);
+void _eval_chain(simpleshell_t *ss_info, char *buffer, size_t *pos,
+size_t start, size_t length);
 /*functions_7.c*/
 int _chain_del(simpleshell_t *ss_info, char *buffer, size_t *pos);
 void _reset_info(simpleshell_t *ss_info);
