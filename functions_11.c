@@ -56,6 +56,7 @@ return (0);
  * _del_alias - unsets an alias and removes it
  * from the linked list.
  * @ss_info: simpleshell_t struct param.
+ * @str: string.
  * Return: 0 (Success), 1 (Otherwise)
 */
 int _del_alias(simpleshell_t *ss_info, char *str)
@@ -76,6 +77,7 @@ return (res);
 /**
  * _add_alias - adds an alias string or
  * updates an existing one.
+ * @ss_info: simpleshell_t struct param.
  * @str: string alias.
  * Return: 0 (Success), 1 (Otherwise)
 */
