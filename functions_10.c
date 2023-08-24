@@ -18,22 +18,17 @@ return (0);
 free(filename);
 if (fd == -1)
 return (0);
-
 if (!fstat(fd, &st))
 fsize = st.st_size;
-
 if (fsize < 2)
 return (0);
-
 buffer = malloc(sizeof(char) * (fsize + 1));
 if (!buffer)
 return (0);
-
 rdlen = read(fd, buffer, fsize);
 buffer[fsize] = 0;
 if (rdlen <= 0)
 return (free(buffer), 0);
-
 close(fd);
 for (a = 0; a < fsize; a++)
 {
@@ -44,15 +39,12 @@ _apnd_hist_list(ss_info, buffer + last_index, histcount++);
 last_index = a + 1;
 }
 }
-
 if (last_index != a)
 _apnd_hist_list(ss_info, buffer + last_index, histcount++);
-
 free(buffer);
 ss_info->history_count = histcount;
 while (ss_info->history_count-- >= 4096)
 _del_node_at_ind(&(ss_info->cmd_hist), 0);
-
 _updt_hist(ss_info);
 return (ss_info->history_count);
 }
