@@ -73,3 +73,22 @@ str, -1)));
 return (res);
 }
 
+/**
+ * _add_alias - adds an alias string or
+ * updates an existing one.
+ * @str: string alias.
+ * Return: 0 (Success), 1 (Otherwise)
+*/
+int _add_alias(simpleshell_t *ss_info, char *str)
+{
+char *es = _strchr(str, '=');
+
+if (!es)
+return (1);
+if (!*++es)
+return (_del_alias(ss_info, str));
+
+_del_alias(ss_info, str);
+return (_append_node(&(ss_info->alias_node), str,
+0) == NULL);
+}
