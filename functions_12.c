@@ -62,3 +62,24 @@ return (1)
 }
 return (0);
 }
+
+/**
+ * _check_cmd - check if file is exe cmd.
+ * @ss_info: simpleshell_t struct param.
+ * @cmd_path: file path.
+ * Return: 1 (Success), 0 (Otherwise)
+*/
+int _check_cmd(simpleshell_t *ss_info, char *cmd_path)
+{
+struct  stat st;
+
+(void)ss_info;
+if (!cmd_path || stat(cmd_path, &st))
+return (0);
+
+if (st.st_mode & S_IFREG)
+{
+return (1);
+}
+return (0);
+}
