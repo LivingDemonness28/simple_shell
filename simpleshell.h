@@ -184,5 +184,6 @@ ssize_t _exe_input(simpleshell_t *ss_info);
 int _shell_help(simpleshell_t *ss_info);
 /*functions_16.c*/
 int _exe_shell(simpleshell_t *ss_info, char **argv);
+int _exe_cmd(simpleshell_t *ss_info);
 
 #endif
