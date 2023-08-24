@@ -78,3 +78,41 @@ index++;
 }
 return (res);
 }
+
+/**
+ * _fork_exe - creates a child process and
+ * exe a cmd in it.
+ * @ss_info: simpleshell_t struct param.
+ * Return: Nothing.
+*/
+void _fork_exe(simpleshell_t *ss_info)
+{
+pid_t cpid = fork();
+
+if (cpid == -1)
+{
+perror("Failed to fork process:");
+return;
+}
+if (cpid == 0)
+{
+if (execve(ss_info->cmd_path, ss_info->argv,
+_copy_env(ss_info)) == -1)
+{
+_clear_info(ss_info, 1);
+if (errno == EACCES)
+exit(126);
+exit(1);
+}
+}
+else
+{
+wait(&(ss_info->last_cmd_status));
+if (WIFEXITED(ss_info->last_cmd_status))
+{
+ss_info->last_cmd_status = WEXITSTATUS(ss_info->last_cmd_status);
+if (ss_info->last_cmd_status == 126)
+_eprint(ss_info, "Execution permission denied\n");
+}
+}
+}
