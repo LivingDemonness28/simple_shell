@@ -176,5 +176,7 @@ int _hprint(simpleshell_t *ss_info);
 void _clear_info(simpleshell_t *ss_info, int ff);
 void _init_info(simpleshell_t *ss_info, char **argv);
 char *_search_exe(simpleshell_t *ss_info, char *str, char *command);
+/*functions_15.c*/
+int _r_line(simpleshell_t *ss_info, char **pointer, size_t *curr_len);
 
 #endif
