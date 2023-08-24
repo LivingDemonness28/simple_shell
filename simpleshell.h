@@ -156,5 +156,6 @@ int _my_del_env(simpleshell_t *ss_info);
 int _my_updt_env(simpleshell_t *ss_info);
 int _repalias(simpleshell_t *ss_info);
 int _repvars(simpleshell_t *ss_info);
+char *_copy_chars(char *str, int begin, int end);
 
 #endif
