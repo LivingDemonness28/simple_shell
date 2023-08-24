@@ -95,3 +95,57 @@ _updt_env(ss_info, "SS_PWD", getcwd(buffer, 1024));
 }
 return (0);
 }
+
+/**
+ * _input_buffer - read input from user and appends
+ * it to the buffer.
+ * @ss_info: simpleshell_t struct param.
+ * @buffer: the buffer.
+ * @len: current buffer length.
+ * Return: num of chars (Success), 0 (empty input),
+ * -2 (Ends with backslash), -1 (Otherwise)
+*/
+ssize_t _input_buffer(simpleshell_t *ss_info, char **buffer, size_t *length)
+{
+ssize_t read_chars = 0;
+size_t temp_len = 0;
+
+if (!*length)
+{
+free(*buffer);
+*buffer = NULL;
+signal(SIGINT, _block_ctrlc);
+
+if (0)
+read_chars = getline(buffer, &temp_len, stdin);
+else
+read_chars = _r_line(ss_info, buffer, &temp_len);
+
+
+if (read_chars > 0)
+{
+if ((*buffer)[read_chars - 1] == '\n')
+{
+(*buffer)[read_chars - 1] = '\0';
+read_chars--;
+}
+
+ss_info->line_count_tracker = 1;
+_nocomments(*buffer);
+_apnd_hist_list(ss_info, *buffer, ss_info->history_count++);
+
+*length = read_chars;
+ss_info->command_buf = buffer;
+}
+else if (read_chars == 0)
+{
+return (0);
+}
+else if (read_chars == -2)
+{
+return (-2);
+}
+}
+
+return (read_chars);
+}
