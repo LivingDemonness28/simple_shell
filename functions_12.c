@@ -46,3 +46,19 @@ a++;
 }
 return (ss_info->env_mod);
 }
+
+/**
+ * _free_ptr - NULL a pointer address
+ * @pointer: pointer address.
+ * Return: 1 (Success), 0 (Otherwise)
+*/
+int _free_ptr(void **pointer)
+{
+if (pointer && *pointer)
+{
+free(*pointer);
+*pointer = NULL;
+return (1)
+}
+return (0);
+}
