@@ -1,7 +1,7 @@
 #include "simpleshell.h"
 
 /**
-* _decimalfd – prints a decimal (integer) num (base 10)
+* _decimalfd - prints a decimal (integer) num (base 10)
 * to a file descriptor.
 * @num: input integer.
 * @fd: file descriptor.
@@ -48,7 +48,7 @@ return (total);
 }
 
 /**
-* _nocomments – replaces the 1st instance of ‘#’ with ‘\0’ 
+* _nocomments - replaces the 1st instance of ‘#’ with ‘\0’
 * @buffer: string address to modify.
 * Return: Nothing.
 */
