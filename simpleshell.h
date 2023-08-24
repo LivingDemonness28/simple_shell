@@ -104,7 +104,7 @@ int _strcmp(char *str1, char *str2);
 int _strlen(char *str);
 /*functions_5.c*/
 char *_strncpy(char *dest, char *src, int n);
-int _alias(list_t *n);
+int _dis_alias(list_t *n);
 int _eatoi(char *str);
 char *_memset(char *s, char b, unsigned int n);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
