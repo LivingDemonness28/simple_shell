@@ -96,7 +96,7 @@ return (nh);
 }
 
 /**
- * list_len - Determines the length of a linked list.
+ * _listlen - Determines the length of a linked list.
  * @head: head of list.
  * Return: The size of the linked list.
  */
