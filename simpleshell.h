@@ -149,5 +149,6 @@ int _alias(simpleshell_t *ss_info);
 char **_copy_env(simpleshell_t *ss_info);
 int _del_env(simpleshell_t *ss_info, char *envvar);
 int _free_ptr(void **pointer);
+int _check_cmd(simpleshell_t *ss_info, char *cmd_path);
 
 #endif
