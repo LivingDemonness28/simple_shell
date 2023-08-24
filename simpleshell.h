@@ -148,8 +148,10 @@ int _alias(simpleshell_t *ss_info);
 /*functions_12.c*/
 char **_copy_env(simpleshell_t *ss_info);
 int _del_env(simpleshell_t *ss_info, char *envvar);
-char *_itoa(long int n, int b, int f);
 int _free_ptr(void **pointer);
 int _check_cmd(simpleshell_t *ss_info, char *cmd_path);
+char *_itoa(long int n, int b, int f);
+/*functions_13.c*/
+int _my_del_env(simpleshell_t *ss_info);
 
 #endif
