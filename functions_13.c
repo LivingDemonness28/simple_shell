@@ -103,3 +103,25 @@ continue;
 _repstr(&ss_info->av[a], _strdup(""));
 }
 }
+
+/**
+ * _copy_chars - copies chars
+ * @str: the string.
+ * @begin: starting index of the range.
+ * @end: end index of the range.
+ * Return: pointer to new duplicated string.
+*/
+char *_copy_chars(char *str, int begin, int end)
+{
+static char buffer[1024];
+int a = begin, b = 0;
+
+while (a < end)
+{
+if (str[a] != ':')
+buffer[b++] = str[a];
+a++;
+}
+buffer[b] = 0;
+return (buffer);
+}
