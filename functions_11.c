@@ -92,3 +92,33 @@ _del_alias(ss_info, str);
 return (_append_node(&(ss_info->alias_node), str,
 0) == NULL);
 }
+
+/**
+ * _alias - mimics alias.
+ * @ss_info: simpleshell_t struct param.
+ * Return: 0 (Always)
+*/
+int _alias(simpleshell_t *ss_info)
+{
+int a = 1;
+char *es = NULL;
+list_t *n = NULL;
+
+if (ss_info->ac == 1)
+{
+for (n = ss_info->alias_node; n; n = n->next)
+{
+_dis_alias(n);
+}
+return (0);
+}
+for (; ss_info->av[a]; a++)
+{
+es = _strchr(ss_info->av[a], '=');
+if (es)
+_add_alias(ss_info, ss_info->av[a]);
+else
+_dis_alias(_prefix_node(ss_info->alias_node, ss_info->av[a], '='));
+}
+return (0);
+}
