@@ -187,5 +187,7 @@ int _exe_shell(simpleshell_t *ss_info, char **argv);
 int _exe_cmd(simpleshell_t *ss_info);
 void _fork_exe(simpleshell_t *ss_info);
 void _find_exe(simpleshell_t *ss_info);
+/*main.c*/
+int main(int argc, char **argv);
 
 #endif
