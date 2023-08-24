@@ -160,5 +160,6 @@ char *_copy_chars(char *str, int begin, int end);
 /*functions_14.c*/
 size_t _lprint(const list_t *head);
 int _hprint(simpleshell_t *ss_info);
+void _clear_info(simpleshell_t *ss_info, int ff);
 
 #endif
