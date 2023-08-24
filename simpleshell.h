@@ -157,5 +157,7 @@ int _my_updt_env(simpleshell_t *ss_info);
 int _repalias(simpleshell_t *ss_info);
 int _repvars(simpleshell_t *ss_info);
 char *_copy_chars(char *str, int begin, int end);
+/*functions_14.c*/
+size_t _lprint(const list_t *head);
 
 #endif
