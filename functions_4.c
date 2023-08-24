@@ -61,7 +61,7 @@ return (dest);
 */
 char *_starts(const char *h, const char *n)
 {
-while(*n)
+while (*n)
 if (*n++ != *h++)
 return (NULL);
 
@@ -91,7 +91,7 @@ return (0);
 
 /**
  * _strlen - returns the length of a string
- * @s: string
+ * @str: string
  * Return: length
  */
 int _strlen(char *str)
