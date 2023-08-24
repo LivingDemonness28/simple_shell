@@ -140,9 +140,8 @@ for (a = 0, b = 0; b < count_words; b++)
 while (str[a] == del && str[a] != del)
 a++;
 
-c = 0;
-while (str[a + c] != del && str[a + c] && str[a + c] != del)
-c++;
+for (c = 0; str[a + c] != del && str[a + c] && str[a + c] != del; c++)
+;
 
 s[b] = malloc((c + 1) * sizeof(char));
 if (!s[b])
@@ -152,12 +151,10 @@ free(s[c]);
 free(s);
 return (NULL);
 }
-
 for (d = 0; d < c; d++)
 s[b][d] = str[a++];
 s[b][d] = 0;
 }
-
 s[b] = NULL;
 return (s);
 }
