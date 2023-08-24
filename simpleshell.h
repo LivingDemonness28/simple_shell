@@ -142,5 +142,6 @@ int _init_env_list(simpleshell_t *ss_info);
 /*functions_11.c*/
 void _block_ctrlc(__attribute__((unused))int signal_number);
 int _updt_env(simpleshell_t *ss_info, char *envvar, char *envval);
+int _del_alias(simpleshell_t *ss_info, char *str);
 
 #endif
