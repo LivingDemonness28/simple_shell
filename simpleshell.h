@@ -161,5 +161,6 @@ char *_copy_chars(char *str, int begin, int end);
 size_t _lprint(const list_t *head);
 int _hprint(simpleshell_t *ss_info);
 void _clear_info(simpleshell_t *ss_info, int ff);
+void _init_info(simpleshell_t *ss_info, char **argv);
 
 #endif
