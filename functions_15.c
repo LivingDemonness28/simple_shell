@@ -13,7 +13,7 @@ int _r_line(simpleshell_t *ss_info, char **pointer, size_t *curr_len)
 static char buffer[1024];
 static size_t a, length;
 size_t b;
-ssize_t d = 0, e = 0;
+ssize_t d = _r_buffer(ss_info, buffer, &length), e = 0;
 char *f = f = *pointer, *np = NULL, *c;
 
 if (f && curr_len)
@@ -21,7 +21,6 @@ e = *curr_len;
 if (a == length)
 a = length = 0;
 
-d = _r_buffer(ss_info, buffer, &length);
 if (d == -1 || (d == 0 && length == 0))
 return (-1);
 
