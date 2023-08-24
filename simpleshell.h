@@ -182,5 +182,7 @@ int _updt_cd(simpleshell_t *ss_info);
 ssize_t _input_buffer(simpleshell_t *ss_info, char **buffer, size_t *length);
 ssize_t _exe_input(simpleshell_t *ss_info);
 int _shell_help(simpleshell_t *ss_info);
+/*functions_16.c*/
+int _exe_shell(simpleshell_t *ss_info, char **argv);
 
 #endif
