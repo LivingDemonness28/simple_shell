@@ -32,10 +32,10 @@ char **strarr = malloc(sizeof(char *) * (a + 1));
 char *str;
 
 if (!h || !a)
-return NULL;
+return (NULL);
 
 if (!strarr)
-return NULL;
+return (NULL);
 
 a = 0;
 while (n)
@@ -46,7 +46,7 @@ if (!str)
 for (b = 0; b < a; b++)
 free(strarr[b]);
 free(strarr);
-return NULL;
+return (NULL);
 }
 
 str = _strcpy(str, n->string);
@@ -56,7 +56,7 @@ n = n->next;
 }
 
 strarr[a] = NULL;
-return strarr;
+return (strarr);
 }
 
 /**
@@ -91,7 +91,8 @@ char *buffer, *home_dir = _envval(ss_info, "HOME=");
 
 if (!home_dir)
 return (NULL);
-buffer = malloc(sizeof(char) * (_strlen(home_dir) + _strlen(".ss_history") + 2));
+buffer = malloc(sizeof(char) * (_strlen(home_dir) +
+_strlen(".ss_history") + 2));
 if (!buffer)
 return (NULL);
 buffer[0] = 0;
