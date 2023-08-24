@@ -117,51 +117,47 @@ return (s);
 */
 char **_strtow_2(char *str, char del)
 {
-int a = 0, b = 0, c, d, numwords = 0;
+int a, b, c, d, count_words = 0;
 char **s;
 
 if (str == NULL || str[0] == 0)
 return (NULL);
 
 for (a = 0; str[a] != '\0'; a++)
-{
 if ((str[a] != del && str[a + 1] == del) ||
 (str[a] != del && !str[a + 1]) || str[a + 1] == del)
-numwords++;
-}
-if (numwords == 0)
+count_words++;
+
+if (count_words == 0)
 return (NULL);
 
-s = malloc((1 + numwords) *sizeof(char *));
+s = malloc((1 + count_words) * sizeof(char *));
 if (!s)
 return (NULL);
 
-for (b = 0; b < numwords; b++)
+for (a = 0, b = 0; b < count_words; b++)
 {
-while (a = 0; str[a] == del && str[a] != del; a++)
-;
+while (str[a] == del && str[a] != del)
+a++;
 
-for (c = 0; str[a + c] != del && str[a + c] && str[a + c] != del; c++)
-;
+c = 0;
+while (str[a + c] != del && str[a + c] && str[a + c] != del)
+c++;
 
 s[b] = malloc((c + 1) * sizeof(char));
 if (!s[b])
 {
-for (d = 0; d < b; d++)
-{
-free(s[d]);
-}
+for (c = 0; c < b; c++)
+free(s[c]);
 free(s);
 return (NULL);
 }
 
 for (d = 0; d < c; d++)
-{
-s[b][d] = str[a];
-a++;
-}
+s[b][d] = str[a++];
 s[b][d] = 0;
 }
+
 s[b] = NULL;
 return (s);
 }
