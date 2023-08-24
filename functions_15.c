@@ -149,3 +149,46 @@ return (-2);
 
 return (read_chars);
 }
+
+/**
+ * _exe_input - executes input retrieval and processing,
+ * including command chains and memory handling.
+ * @ss_info: simpleshell_t struct param.
+ * Return: number of bytes read.
+*/
+ssize_t _exe_input(simpleshell_t *ss_info)
+{
+static char *buffer;
+static size_t a, b, clen;
+ssize_t cread = input_buf(ss_info, &buffer, &clen);
+char **input_ptr = &(ss_info->input_arg), *res;
+
+_putchar(-1);
+if (cread == -1)
+return (-1);
+if (clen)
+{
+b = a;
+res = buffer + a;
+_eval_chain(ss_info, buffer, &a, b, clen);
+while (a < clen)
+{
+if (_chain_del(ss_info, buffer, &a))
+break;
+a++;
+}
+
+b = a + 1;
+if (b >= clen)
+{
+b = clen = 0;
+ss_info->cmd_type = 0;
+}
+
+*input_ptr = res;
+return (_strlen(res));
+}
+
+*input_ptr = buffer;
+return (cread);
+}
