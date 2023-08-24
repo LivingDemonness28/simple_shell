@@ -92,3 +92,45 @@ ss_info->ac = a;
 _repalias(ss_info);
 _repvars(ss_info);
 }
+
+/**
+ * _search_exe - searches for an exe cmd in the
+ * specified paths.
+ * @ss_info: simpleshell_t struct param.
+ * @str: the str.
+ * @command: command to find
+ * Return: cmd path (Success), NULL (Otherwise)
+*/
+char *_search_exe(simpleshell_t *ss_info, char *str, char *command)
+{
+int a = 0, cp = 0;
+char *cmd_path;
+
+if (!str)
+return (NULL);
+if ((_strlen(command) > 2) && _starts(command, "./"))
+{
+if (_check_cmd(ss_info, command))
+return (command);
+}
+for (; 1; a++)
+{
+if (!str[a] || str[a] == ':')
+{
+cmd_path = _copy_chars(str, cp, a);
+if (!*cmd_path)
+_strcat(cmd_path, command);
+else
+{
+_strcat(cmd_path, "/");
+_strcat(cmd_path, command);
+}
+if (_check_cmd(ss_info, cmd_path))
+return (cmd_path);
+if (!str[a])
+break;
+cp = a;
+}
+}
+return (NULL);
+}
