@@ -68,9 +68,9 @@ return (ss_info->history_count);
  * @del: delimiter string.
  * Return: ptr to arr of str (Success), NULL (Otherwise).
 */
-char **strtow_1(char *str, char *del)
+char **_strtow_1(char *str, char *del)
 {
-int a = 0, b = 0, c, d, word_count = 0;
+int a = 0, b, c, d, count_words = 0;
 char **s;
 
 if (str == NULL || str[0] == 0)
@@ -79,53 +79,31 @@ return (NULL);
 if (!del)
 del = " ";
 
-while (str[a] != '\0')
-{
-if (!_check_del(str[a], del) && (_check_del(str[a + 1], del) || !str[a + 1]))
-word_count++;
-a++;
-}
+ for (; str[a] != '\0'; a++)
+ if (!_check_del(str[a], del) && (_check_del(str[a + 1], del) || !str[a + 1]))
+ count_words++;
 
-if (word_count == 0)
+if (count_words == 0)
 return (NULL);
 
-s = malloc((1 + word_count) *sizeof(char *));
+s = malloc((1 + count_words) *sizeof(char *))
 if (!s)
-return (NULL);
-
-a = 0;
-b = 0;
-while (b < word_count)
+return (NULL)
+for (a = 0, b = 0; b < count_words; b++)
 {
 while (_check_del(str[a], del))
 a++;
-
-c = 0;
-while (!_check_del(str[a + c], del) && str[a + c])
-c++;
-
-s[b] = malloc((c + 1) * sizeof(char));
+s[b] = malloc((c + 1) *sizeof(char));
 if (!s[b])
 {
-d = 0;
-while (d < b)
-{
-free(s[d]);
-d++;
-}
+for (c = 0; c < b; c++)
+free(s[c]);
 free(s);
 return (NULL);
 }
-
-d = 0;
-while (d < c)
-{
-s[b][d] = str[a];
-a++;
-d++;
-}
+for  (d = 0; d < c; d++)
+s[b][d] = str[a++];
 s[b][d] = 0;
-b++;
 }
 s[b] = NULL;
 return (s);
