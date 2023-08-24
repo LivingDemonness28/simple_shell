@@ -83,3 +83,35 @@ return (1);
 }
 return (0);
 }
+
+/**
+ * _itoa - convert long int to str
+ * @n: number.
+ * @b: base for conversion.
+ * @f: flag.
+ * Return: ptr to converted str.
+*/
+char *_itoa(long int n, int b, int f)
+{
+static char *arr, buffer[50];
+char *s = 0, *pointer = &buffer[49];
+unsigned long a = n;
+
+if (!(f & 2) && n < 0)
+{
+a = -n;
+s = '-';
+}
+
+arr = f & 1 ? "0123456789abcdef" : "0123456789ABCDEF";
+*pointer = '\0';
+
+for (; a != 0; a /= b)
+{
+*--pointer = arr[a % b];
+}
+
+if (s)
+*--pointer = s;
+return (pointer);
+}
