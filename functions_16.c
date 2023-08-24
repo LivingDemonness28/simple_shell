@@ -116,3 +116,47 @@ _eprint(ss_info, "Execution permission denied\n");
 }
 }
 }
+
+/**
+ * _find_exe - searches for and executes a cmd.
+ * @ss_info: simpleshell_t struct param.
+ * Return: Nothing.
+*/
+void _find_exe(info_t *info)
+{
+char *cmd_path = NULL;
+int a = 0, b = 0;
+
+info->cmd_path = info->argv[0];
+if (info->line_count_tracker == 1)
+{
+info->line_num++;
+info->line_count_tracker = 0;
+}
+while (info->input_arg[a])
+{
+if (!_check_del(info->input_arg[a], " \t\n"))
+b++;
+a++;
+}
+if (!b)
+return;
+
+cmd_path = _search_exe(info, _envval(info, "CUSTOM_PATH="), info->argv[0]);
+if (cmd_path)
+{
+info->cmd_path = cmd_path;
+_fork_exe(info);
+}
+else
+{
+if ((_interact(info) || _envval(info, "CUSTOM_PATH=")
+|| info->argv[0][0] == '/') && _check_cmd(info, info->argv[0]))
+_fork_exe(info);
+else if (*(info->input_arg) != '\n')
+{
+info->last_cmd_status = 127;
+_eprint(info, "Command not found or not executable\n");
+}
+}
+}
