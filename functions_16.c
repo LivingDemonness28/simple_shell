@@ -43,3 +43,38 @@ exit(ss_info->exit_error);
 }
 return (b_res);
 }
+
+/**
+ * _exe_cmd - executes built in commands
+ * @ss_info: simpleshell_t struct param.
+ * Return: 0 (Success), 1 (builtin found but
+ * not successful), 2 (builtin signals exit()),
+ * -1 (Otherwise)
+*/
+int _exe_cmd(simpleshell_t *ss_info)
+{
+int index = 0, res = -1;
+ss_table builtin_table[] = {
+{"exit", _exit_shell},
+{"env", _currenv},
+{"help", _shell_help},
+{"history", _hprint},
+{"setenv", _my_updt_env},
+{"unsetenv", _my_del_env},
+{"cd", _updt_cd},
+{"alias", _alias},
+{NULL, NULL}
+};
+
+while (builtin_table[index].cmd_type)
+{
+if (_strcmp(ss_info->argv[0], builtin_table[index].cmd_type) == 0)
+{
+ss_info->line_num++;
+res = builtin_table[index].cmd_func(ss_info);
+break;
+}
+index++;
+}
+return (res);
+}
