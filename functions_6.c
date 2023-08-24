@@ -25,7 +25,7 @@ free(curr_ptr);
  * @ss_info: simpleshell_t struct param.
  * @buffer: The buffer.
  * @size: size of buffer.
- * Retrn: num of bytes read (Success), -1 (Otherwise)
+ * Return: num of bytes read (Success), -1 (Otherwise)
 */
 ssize_t _r_buffer(simpleshell_t *ss_info, char *buffer, size_t *size)
 {
@@ -41,7 +41,7 @@ return (rbytes);
 }
 
 /**
- * _getenv - gets the value of an environ variable
+ * _envval - gets the value of an environ variable
  * @ss_info: simpleshell_t struct param.
  * @envvar: pointer to env var name
  * Return: the env var val (Success), NULL (Otherwise)
@@ -61,8 +61,8 @@ return (NULL);
 }
 
 /**
- * _exit - exits shell.
- * @ss_info - simpleshell_t struct param.
+ * _exit_shell - exits shell.
+ * @ss_info: simpleshell_t struct param.
  * Return: exit with exit code.
 */
 int _exit_shell(simpleshell_t *ss_info)
@@ -96,7 +96,8 @@ return (-2);
  * @length: buffer length
  * Return: Nothing
  */
-void _eval_chain(simpleshell_t *ss_info, char *buffer, size_t *pos, size_t start, size_t length)
+void _eval_chain(simpleshell_t *ss_info, char *buffer,
+size_t *pos, size_t start, size_t length)
 {
 size_t cp = *pos;
 
