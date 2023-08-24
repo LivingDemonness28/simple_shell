@@ -192,3 +192,20 @@ return (_strlen(res));
 *input_ptr = buffer;
 return (cread);
 }
+
+/**
+ * _shell_help - displays help information for
+ * simpleshell.
+ * @ss_info: simpleshell_t struct param.
+ * Return: 0 (Always)
+*/
+int _shell_help(simpleshell_t *ss_info)
+{
+char **arg_arr;
+
+arg_arr = ss_info->av;
+_puts("function works. Not implemented yet \n");
+if (0)
+_puts(*arg_arr);
+return (0);
+}
