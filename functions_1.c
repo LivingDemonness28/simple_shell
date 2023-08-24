@@ -1,7 +1,7 @@
 #include "simpleshell.h"
 
 /**
-* _strncat – concatenate two strings
+* _strncat - concatenate two strings
 * using at most n bytes from src
 * @dest: destination string where the result will be stored
 * @src: the source string to be appended to the destination string.
@@ -24,7 +24,7 @@ return (dest);
 }
 
 /**
-* _check_del – checks if a char is delimiter.
+* _check_del - checks if a char is delimiter.
 * ch: character check.
 * del_str: delimiter string.
 * Return: 1 (Success), 0 (Otherwise)
@@ -42,7 +42,7 @@ return (0);
 }
 
 /**
-*  _interact – true if shell is interactive mode,
+*  _interact - true if shell is interactive mode,
 * @ss_info: simpleshell_t struct param.
 * Return: convert number (Success), 0 (Otherwise)
 */
@@ -59,7 +59,7 @@ return (0);
 }
 
 /**
-* _repstr – replaces a string.
+* _repstr - replaces a string.
 * @ostr: old str address.
 * @nstr: new str.
 * Return: 1 (Success), 0 (Otherwise)
@@ -72,7 +72,7 @@ return (1);
 }
 
 /**
-* _putchar – writes char c to standard output.
+* _putchar - writes char c to standard output.
 * @c: The char.
 * Return: 1 (Success), -1 (Otherwise)
 */
