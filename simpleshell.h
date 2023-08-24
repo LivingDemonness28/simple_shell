@@ -178,5 +178,6 @@ void _init_info(simpleshell_t *ss_info, char **argv);
 char *_search_exe(simpleshell_t *ss_info, char *str, char *command);
 /*functions_15.c*/
 int _r_line(simpleshell_t *ss_info, char **pointer, size_t *curr_len);
+int _updt_cd(simpleshell_t *ss_info);
 
 #endif
