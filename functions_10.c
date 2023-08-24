@@ -8,14 +8,13 @@
 int _r_hist(simpleshell_t *ss_info)
 {
 int a, last_index = 0, histcount = 0;
-ssize_t fd, rdlen, fsize = 0;
 struct stat st;
 char *buffer = NULL, *filename = _histfile(ss_info);
+ssize_t fd = open(filename, O_RDONLY), rdlen, fsize = 0;
 
 if (!filename)
 return (0);
 
-fd = open(filename, O_RDONLY);
 free(filename);
 if (fd == -1)
 return (0);
@@ -36,8 +35,7 @@ if (rdlen <= 0)
 return (free(buffer), 0);
 
 close(fd);
-a = 0;
-while (a < fsize)
+for (a = 0; a < fsize; a++)
 {
 if (buffer[a] == '\n')
 {
@@ -45,7 +43,6 @@ buffer[a] = 0;
 _apnd_hist_list(ss_info, buffer + last_index, histcount++);
 last_index = a + 1;
 }
-a++;
 }
 
 if (last_index != a)
@@ -53,7 +50,6 @@ _apnd_hist_list(ss_info, buffer + last_index, histcount++);
 
 free(buffer);
 ss_info->history_count = histcount;
-
 while (ss_info->history_count-- >= 4096)
 _del_node_at_ind(&(ss_info->cmd_hist), 0);
 
