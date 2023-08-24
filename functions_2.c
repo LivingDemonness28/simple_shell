@@ -1,10 +1,11 @@
 #include "simpleshell.h"
 
 /**
-* _strchr – finds a character in a string.
-* @str: string to be searched.
-* @c: character to locate.
-* Return: a pointer to the first occurrence of c in str (Success). NULL (Otherwise)
+ * _strchr - finds a character in a string.
+ * @str: string to be searched.
+ * @c: character to locate.
+ * Return: a pointer to the first character of
+ * c in str (Success), NULL (Otherwise)
 */
 char *_strchr(char *str, char c)
 {
@@ -17,7 +18,7 @@ return (NULL);
 }
 
 /**
-* _w_stderr – writes the char c to standard error.
+* _w_stderr - writes the char c to standard error.
 * @c: The character
 * Return: 1 (Success), -1 (Otherwise).
 */
@@ -38,7 +39,7 @@ return (1);
 }
 
 /**
-* _w_str_stdder – writes the string to standard error.
+* _w_str_stdder - writes the string to standard error.
 * @str: the string.
 * Return: Nothing.
 */
@@ -56,7 +57,7 @@ _w_stderr(str[a]);
 }
 
 /**
-* _wc_to_fd – writes the c to given fd.
+* _wc_to_fd - writes the c to given fd.
 * @c: the char.
 * @fd: file descriptor.
 * Return: 1 (Success), 0 (Otherwise).
@@ -78,7 +79,7 @@ return (1);
 }
 
 /**
-* _wsfd – writes str to given fd.
+* _wsfd - writes str to given fd.
 * @str: the string.
 * @fd: file descriptor.
 * Return: num of chars written to fd.
