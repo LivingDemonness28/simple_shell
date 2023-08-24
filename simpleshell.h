@@ -15,6 +15,19 @@
 
 extern char **environ;
 
+/**
+ * struct ss_builtin - struct to define built-in
+ * commands and their corresponding funcs.
+ * @cmd_type: name of the built-in command.
+ * @cmd_func: pointer to the func that implements
+ * the built-in command
+*/
+typedef struct ss_builtin
+{
+char *cmd_type;
+int (*cmd_func)(simpleshell_t *);
+} ss_table;
+
 #define EMPTY_INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 		0, 0, 0}
