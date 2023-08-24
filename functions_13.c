@@ -63,4 +63,43 @@ return (0);
 ss_info->av[0] = b;
 }
 return (1);
+a++;
+}
+
+/**
+ * _repvars - replaces vars.
+ * @ss_info: simpleshell_t struct param.
+ * Return: 1 (Success), 0 (Otherwise)
+*/
+int _repvars(simpleshell_t *ss_info)
+{
+int a = 0;
+list_t *n;
+
+while (ss_info->av[a])
+{
+if (ss_info->av[a][0] != '$' || !ss_info->av[a][1])
+continue;
+
+if (!_strcmp(ss_info->av[a], "$?"))
+{
+_repstr(&(ss_info->av[a]),
+_strdup(_itoa(ss_info->last_cmd_status, 10, 0)));
+continue;
+}
+if (!_strcmp(ss_info->av[a], "$$"))
+{
+_repstr(&(ss_info->av[a]),
+_strdup(_itoa(getpid(), 10, 0)));
+continue;
+}
+n = _prefix_node(ss_info->local_env_list, &ss_info->av[a][1], '=');
+if (n)
+{
+_repstr(&(ss_info->av[a]),
+_strdup(_strchr(n->string, '=') + 1));
+continue;
+}
+_repstr(&ss_info->av[a], _strdup(""));
+}
 }
