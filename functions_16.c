@@ -25,7 +25,7 @@ if (a != -1)
 _init_info(ss_info, argv);
 b_res = find_builtin(ss_info);
 if (b_res == -1)
-find_cmd(ss_info);
+_find_exe(ss_info);
 }
 else if (_interact(ss_info))
 _putchar('\n');
