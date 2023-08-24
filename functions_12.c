@@ -58,7 +58,7 @@ if (pointer && *pointer)
 {
 free(*pointer);
 *pointer = NULL;
-return (1)
+return (1);
 }
 return (0);
 }
@@ -94,7 +94,7 @@ return (0);
 char *_itoa(long int n, int b, int f)
 {
 static char *arr, buffer[50];
-char *s = 0, *pointer = &buffer[49];
+char s = 0, *pointer = &buffer[49];
 unsigned long a = n;
 
 if (!(f & 2) && n < 0)
