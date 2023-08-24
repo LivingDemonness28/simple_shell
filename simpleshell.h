@@ -148,5 +148,6 @@ int _alias(simpleshell_t *ss_info);
 /*functions_12.c*/
 char **_copy_env(simpleshell_t *ss_info);
 int _del_env(simpleshell_t *ss_info, char *envvar);
+size_t _lprint(const list_t *head);
 
 #endif
