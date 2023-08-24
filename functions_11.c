@@ -51,3 +51,25 @@ free(buffer);
 ss_info->env_mod = 1;
 return (0);
 }
+
+/**
+ * _del_alias - unsets an alias and removes it
+ * from the linked list.
+ * @ss_info: simpleshell_t struct param.
+ * Return: 0 (Success), 1 (Otherwise)
+*/
+int _del_alias(simpleshell_t *ss_info, char *str)
+{
+char *es = _strchr(str, '='), org_char = *es;
+int res;
+
+if (!es)
+return (1);
+*es = 0;
+res =  _del_node_at_ind(&(ss_info->alias_node),
+_node_ind(ss_info->alias_node, _prefix_node(ss_info->alias_node,
+str, -1)));
+*es = org_char;
+return (res);
+}
+
