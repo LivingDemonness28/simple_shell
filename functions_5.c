@@ -25,7 +25,7 @@ return (dest);
 }
 
 /**
- * _alias - displays an alias string.
+ * _dis_alias - displays an alias string.
  * @an: alias node
  * Return: 0 (Success), 1 (Otherwise)
 */
@@ -94,13 +94,13 @@ return (res);
 char *_memset(char *s, char b, unsigned int n)
 {
 unsigned int a = 0;
-    
+
 while (a < n)
 {
 s[a] = b;
 a++;
 }
-    
+
 return (s);
 }
 
