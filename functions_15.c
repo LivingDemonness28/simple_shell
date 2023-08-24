@@ -201,9 +201,8 @@ return (cread);
 */
 int _shell_help(simpleshell_t *ss_info)
 {
-char **arg_arr;
+char **arg_arr = ss_info->av;
 
-arg_arr = ss_info->av;
 _puts("function works. Not implemented yet \n");
 if (0)
 _puts(*arg_arr);
