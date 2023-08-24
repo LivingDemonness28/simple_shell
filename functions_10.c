@@ -74,7 +74,7 @@ count_words++;
 if (count_words == 0)
 return (NULL);
 
-s = malloc((1 + count_words) *sizeof(char *))
+s = malloc((1 + count_words) *sizeof(char *));
 if (!s)
 return (NULL);
 for (a = 0, b = 0; b < count_words; b++)
