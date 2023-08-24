@@ -180,5 +180,6 @@ char *_search_exe(simpleshell_t *ss_info, char *str, char *command);
 int _r_line(simpleshell_t *ss_info, char **pointer, size_t *curr_len);
 int _updt_cd(simpleshell_t *ss_info);
 ssize_t _input_buffer(simpleshell_t *ss_info, char **buffer, size_t *length);
+ssize_t _exe_input(simpleshell_t *ss_info);
 
 #endif
