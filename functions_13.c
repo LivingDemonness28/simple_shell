@@ -36,3 +36,31 @@ if (_updt_env(ss_info, ss_info->av[1], ss_info->av[2]))
 return (0);
 return (1);
 }
+
+/**
+ * _repalias - replace alias.
+ * @ss_info: simpleshell_t struct param.
+ * Return: 1 (Success), 0 (Otherwise)
+*/
+int _repalias(simpleshell_t *ss_info)
+{
+int a = 0;
+list_t *n;
+char *b;
+
+while (a < 10)
+{
+n = _prefix_node(ss_info->alias_node, ss_info->av[0], '=');
+if (!n)
+return (0);
+free(ss_info->av[0]);
+b = _strchr(n->string, '=');
+if (!b)
+return (0);
+b = _strdup(b + 1);
+if (!b)
+return (0);
+ss_info->av[0] = b;
+}
+return (1);
+}
