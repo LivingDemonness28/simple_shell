@@ -85,6 +85,11 @@ _w_str_stderr(": ");
 _w_str_stderr(str);
 }
 
+/**
+ * _puts - prints input str.
+ * @str: str to print.
+ * Return: Nothing.
+*/
 void _puts(char *str)
 {
 int a = 0;
