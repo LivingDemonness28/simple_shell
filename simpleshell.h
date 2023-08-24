@@ -155,5 +155,6 @@ char *_itoa(long int n, int b, int f);
 int _my_del_env(simpleshell_t *ss_info);
 int _my_updt_env(simpleshell_t *ss_info);
 int _repalias(simpleshell_t *ss_info);
+int _repvars(simpleshell_t *ss_info);
 
 #endif
