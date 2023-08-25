@@ -8,7 +8,7 @@
 void _block_ctrlc(__attribute__((unused))int sn)
 {
 _puts("\n");
-_puts("ss$ ");
+_puts("$ ");
 _putchar(-1);
 }
 
