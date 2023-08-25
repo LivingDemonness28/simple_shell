@@ -121,11 +121,12 @@ list_t *_prefix_node(list_t *h, char *start, char c)
 {
 char *a = NULL;
 
-for (; h; h = h->next)
+while (h)
 {
 a = _starts(h->string, start);
 if (a && ((c == -1) || (*a == c)))
 return (h);
+h = h->next;
 }
 return (NULL);
 }
