@@ -39,7 +39,7 @@ return (1);
 }
 
 /**
-* _w_str_stderr - writes the string to standard error.
+* _wsstderr - writes the string to standard error.
 * @str: the string.
 * Return: Nothing.
 */
