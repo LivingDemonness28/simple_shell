@@ -71,7 +71,6 @@ _append_node(&n, buffer, histcount);
 
 if (!ss_info->cmd_hist)
 ss_info->cmd_hist = n;
-
 return (0);
 }
 
