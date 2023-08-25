@@ -30,10 +30,8 @@ ssize_t rbytes = read(ss_info->rfd, buffer, 1024);
 
 if (*size)
 return (0);
-
 if (rbytes >= 0)
-*size = (size_t)rbytes;
-
+*size = rbytes;
 return (rbytes);
 }
 
