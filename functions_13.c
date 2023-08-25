@@ -78,7 +78,7 @@ list_t *n;
 
 while (ss_info->av[a])
 {
-if (ss_info->av[a][0] != '$' || !ss_info->av[a][1])
+if (ss_info->av[a][0] != "$" || !ss_info->av[a][1])
 continue;
 
 if (!_strcmp(ss_info->av[a], "$?"))
@@ -102,6 +102,7 @@ continue;
 }
 _repstr(&ss_info->av[a], _strdup(""));
 }
+return (0);
 }
 
 /**
