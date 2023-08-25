@@ -34,7 +34,7 @@ _strcpy(buffer, envvar);
 _strcat(buffer, "=");
 _strcat(buffer, envval);
 
-for (; n; n = n->next)
+while (n)
 {
 a = _starts(n->string, envvar);
 if (a && *a == '=')
