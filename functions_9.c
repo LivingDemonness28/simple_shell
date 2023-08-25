@@ -104,25 +104,21 @@ return (buffer);
  */
 int _w_hist(simpleshell_t *ss_info)
 {
-char *filename = _histfile(ss_info);
-ssize_t fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0644);
+char *fname = _histfile(ss_info);
+ssize_t fd = open(fname, O_CREAT | O_TRUNC | O_RDWR, 0644);
 list_t *n = NULL;
 
-if (!filename)
+if (!fname)
 return (-1);
 
-free(filename);
+free(fname);
 if (fd == -1)
 return (-1);
-
-n = ss_info->cmd_hist;
-while (n)
+for (n = ss_info->cmd_hist; n; n = n->next)
 {
 _wsfd(n->string, fd);
 _wcfd('\n', fd);
-n = n->next;
 }
-
 _wcfd(-1, fd);
 close(fd);
 return (1);
