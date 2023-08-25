@@ -8,7 +8,7 @@
 */
 int main(int argc, char **argv)
 {
-simpleshell_t ss_info[] = { EMPTY_SS_INFO_INIT };
+simpleshell_t ss_info[] = { EMPTY_INFO_INIT };
 int fd = 2;
 
 asm ("mov %1, %0\n\t"
