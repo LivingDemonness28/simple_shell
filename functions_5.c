@@ -63,7 +63,7 @@ unsigned long int res = 0;
 
 if (*str == '+')
 str++;
-for (str[a] != '\0'; a++)
+for (; str[a] != '\0'; a++)
 {
 if (str[a] >= '0' && str[a] <= '9')
 {
