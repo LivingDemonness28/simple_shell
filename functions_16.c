@@ -53,7 +53,7 @@ for (; a != -1 && b_res != -2;)
 _reset_info(ss_info);
 if (_interact(ss_info))
 _puts("$ ");
-_w_stderr(-1);
+_wcstderr(-1);
 a = _exe_input(ss_info);
 if (a != -1)
 {
@@ -135,7 +135,7 @@ ss_info->line_count_tracker = 0;
 }
 while (ss_info->input_args[a])
 {
-if (!_check_del(ss_info->input_args[a], " \t\n"))
+if (!_del(ss_info->input_args[a], " \t\n"))
 b++;
 a++;
 }
