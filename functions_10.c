@@ -9,13 +9,13 @@ int _r_hist(simpleshell_t *ss_info)
 {
 int a, last_index = 0, histcount = 0;
 struct stat st;
-char *buffer = NULL, *filename = _histfile(ss_info);
+char *buffer = NULL, *fname = _histfile(ss_info);
 ssize_t fd = open(filename, O_RDONLY), rdlen, fsize = 0;
 
-if (!filename)
+if (!fname)
 return (0);
 
-free(filename);
+free(fname)
 if (fd == -1)
 return (0);
 if (!fstat(fd, &st))
@@ -31,13 +31,11 @@ if (rdlen <= 0)
 return (free(buffer), 0);
 close(fd);
 for (a = 0; a < fsize; a++)
-{
 if (buffer[a] == '\n')
 {
 buffer[a] = 0;
 _apnd_hist_list(ss_info, buffer + last_index, histcount++);
 last_index = a + 1;
-}
 }
 if (last_index != a)
 _apnd_hist_list(ss_info, buffer + last_index, histcount++);
