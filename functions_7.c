@@ -69,7 +69,7 @@ return (ss_info->history_count = a);
 }
 
 /**
- * _print_str - print only the str element
+ * _print_str_ele - print only the str element
  * of a list_t linked list.
  * @head: pointer to first node of the linked list.
  * Return: Size of list.
