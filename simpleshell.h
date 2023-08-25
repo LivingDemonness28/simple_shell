@@ -189,6 +189,7 @@ void _fork_exe(simpleshell_t *ss_info);
 void _find_exe(simpleshell_t *ss_info);
 /*functions_17.c*/
 int _isalpha(int c);
+int _atoi(char *str);
 /*main.c*/
 int main(int argc, char **argv);
 
