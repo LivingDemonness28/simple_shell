@@ -18,11 +18,11 @@ return (NULL);
 }
 
 /**
-* _w_stderr - writes the char c to standard error.
+* _wstderr - writes the char c to standard error.
 * @c: The character
 * Return: 1 (Success), -1 (Otherwise).
 */
-int _w_stderr(char c)
+int _wstderr(char c)
 {
 static int a;
 static char buffer[1024];
