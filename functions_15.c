@@ -57,7 +57,6 @@ int res;
 
 if (!path)
 _puts("Error: Unable to retrieve current directory.\n");
-
 if (!ss_info->av[1])
 {
 tar_dir = _envval(ss_info, "SS_HOME=");
