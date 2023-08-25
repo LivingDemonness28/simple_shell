@@ -31,7 +31,6 @@ ss_info->cmd_type = 3;
 }
 else
 return (0);
-
 *pos = a;
 return (1);
 }
