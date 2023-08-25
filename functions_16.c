@@ -24,7 +24,7 @@ ss_table builtin_table[] = {
 
 while (builtin_table[index].cmd_type)
 {
-if (_strcmp(ss_info->argv[0], builtin_table[index].cmd_type) == 0)
+if (_strcmp(ss_info->av[0], builtin_table[index].cmd_type) == 0)
 {
 ss_info->line_num++;
 res = builtin_table[index].cmd_func(ss_info);
@@ -96,7 +96,7 @@ return;
 }
 if (cpid == 0)
 {
-if (execve(ss_info->cmd_path, ss_info->argv,
+if (execve(ss_info->cmd_path, ss_info->av,
 _copy_env(ss_info)) == -1)
 {
 _clear_info(ss_info, 1);
@@ -127,15 +127,15 @@ void _find_exe(simpleshell_t *ss_info)
 char *cmd_path = NULL;
 int a = 0, b = 0;
 
-ss_info->cmd_path = ss_info->argv[0];
+ss_info->cmd_path = ss_info->av[0];
 if (ss_info->line_count_tracker == 1)
 {
 ss_info->line_num++;
 ss_info->line_count_tracker = 0;
 }
-while (ss_info->input_arg[a])
+while (ss_info->input_args[a])
 {
-if (!_check_del(ss_info->input_arg[a], " \t\n"))
+if (!_check_del(ss_info->input_args[a], " \t\n"))
 b++;
 a++;
 }
@@ -143,7 +143,7 @@ if (!b)
 return;
 
 cmd_path = _search_exe(ss_info, _envval(ss_info, "CUSTOM_PATH="),
-ss_info->argv[0]);
+ss_info->av[0]);
 if (cmd_path)
 {
 ss_info->cmd_path = cmd_path;
@@ -152,9 +152,9 @@ _fork_exe(ss_info);
 else
 {
 if ((_interact(ss_info) || _envval(ss_info, "CUSTOM_PATH=")
-|| ss_info->argv[0][0] == '/') && _check_cmd(ss_info, ss_info->argv[0]))
+|| ss_info->av[0][0] == '/') && _check_cmd(ss_info, ss_info->av[0]))
 _fork_exe(ss_info);
-else if (*(ss_info->input_arg) != '\n')
+else if (*(ss_info->input_args) != '\n')
 {
 ss_info->last_cmd_status = 127;
 _eprint(ss_info, "Command not found or not executable\n");
