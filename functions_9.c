@@ -10,10 +10,11 @@ ssize_t _node_ind(list_t *h, list_t *n)
 {
 size_t a = 0;
 
-for (; h; h = h->next)
+while (h)
 {
 if (h == n)
 return (a);
+h = h->next;
 a++;
 }
 return (-1);
