@@ -60,9 +60,10 @@ int _updt_hist(simpleshell_t *ss_info)
 list_t *n = ss_info->cmd_hist;
 int a = 0;
 
-for (; n; n = n->next)
+while (n)
 {
 n->number = a++;
+n = n->next;
 }
 return (ss_info->history_count = a);
 }
