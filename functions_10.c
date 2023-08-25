@@ -56,7 +56,7 @@ return (ss_info->history_count);
 */
 char **_strtow_1(char *str, char *del)
 {
-int a = 0, b = 0, c, d, count_words = 0;
+int a = 0, b, c, d, count_words = 0;
 char **s;
 
 if (str == NULL || str[0] == 0)
@@ -108,27 +108,22 @@ char **s;
 
 if (str == NULL || str[0] == 0)
 return (NULL);
-
 for (a = 0; str[a] != '\0'; a++)
 if ((str[a] != del && str[a + 1] == del) ||
 (str[a] != del && !str[a + 1]) || str[a + 1] == del)
 count_words++;
-
 if (count_words == 0)
 return (NULL);
-
 s = malloc((1 + count_words) *sizeof(char *));
 if (!s)
 return (NULL);
-
 for (a = 0, b = 0; b < count_words; b++)
 {
 while (str[a] == del && str[a] != del)
 a++;
-
-for (c = 0; str[a + c] != del && str[a + c] && str[a + c] != del; c++)
-;
-
+c = 0;
+while (str[a + c] != del && str[a + c] && str[a + c] != del)
+c++;
 s[b] = malloc((c + 1) * sizeof(char));
 if (!s[b])
 {
@@ -166,11 +161,8 @@ int _init_env_list(simpleshell_t *ss_info)
 list_t *n = NULL;
 size_t a = 0;
 
-while (environ[a])
-{
+for (; environ[a]; a++)
 _append_node(&n, environ[a], 0);
-a++;
-}
 ss_info->local_env_list = n;
 return (0);
 }
