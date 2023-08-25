@@ -62,26 +62,18 @@ int a = 0;
 unsigned long int res = 0;
 
 if (*str == '+')
-{
 str++;
-}
-
-while (str[a] != '\0')
+for (str[a] != '\0'; a++)
 {
 if (str[a] >= '0' && str[a] <= '9')
 {
 res *= 10;
 res += (str[a] - '0');
 if (res > INT_MAX)
-{
 return (-1);
-}
 }
 else
-{
 return (-1);
-}
-a++;
 }
 return (res);
 }
