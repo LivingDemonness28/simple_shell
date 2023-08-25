@@ -58,22 +58,19 @@ return (ss_info->history_count);
 */
 char **_strtow_1(char *str, char *del)
 {
-int a = 0, b, c, d, count_words = 0;
+int a = 0, b = 0, c, d, count_words = 0;
 char **s;
 
 if (str == NULL || str[0] == 0)
 return (NULL);
-
 if (!del)
 del = " ";
-
 for (; str[a] != '\0'; a++)
 if (!_check_del(str[a], del) && (_check_del(str[a + 1], del) || !str[a + 1]))
 count_words++;
 
 if (count_words == 0)
 return (NULL);
-
 s = malloc((1 + count_words) *sizeof(char *));
 if (!s)
 return (NULL);
@@ -81,7 +78,10 @@ for (a = 0, b = 0; b < count_words; b++)
 {
 while (_check_del(str[a], del))
 a++;
-s[b] = malloc((c + 1) * sizeof(char *));
+c = 0;
+while (!_check_del(str[a + c], del) && str[a + c])
+c++;
+s[b] = malloc((c + 1) * sizeof(char));
 if (!s[b])
 {
 for (c = 0; c < b; c++)
@@ -89,7 +89,7 @@ free(s[c]);
 free(s);
 return (NULL);
 }
-for  (d = 0; d < c; d++)
+for (d = 0; d < c; d++)
 s[b][d] = str[a++];
 s[b][d] = 0;
 }
