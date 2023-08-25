@@ -101,9 +101,11 @@ size_t _listlen(const list_t *head)
 {
 size_t a = 0;
 
-for (; head; head = head->next, a++)
-;
-
+while (head)
+{
+head = head->next;
+a++;
+}
 return (a);
 }
 
