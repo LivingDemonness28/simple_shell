@@ -81,7 +81,7 @@ return (0);
  */
 char *_histfile(simpleshell_t *ss_info)
 {
-char *buffer, *home_dir = _envval(ss_info, "HOME=");
+char *buffer, *home_dir = _envval(ss_info, "SS_HOME=");
 
 if (!home_dir)
 return (NULL);
