@@ -101,7 +101,7 @@ int _putchar(char c);
 char *_strchr(char *str, char c);
 int _wcstderr(char c);
 void _wsstderr(char *str);
-int _wc_to_fd(char c, int fd);
+int _wcfd(char c, int fd);
 int _wsfd(char *str, int fd);
 /*functions_3.c*/
 int _decimalfd(int num, int fd);
