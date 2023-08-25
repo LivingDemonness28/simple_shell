@@ -11,19 +11,16 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-int len = 0, i = 0;
+int a = 0;
 
-while (src[len] != '\0')
+if (dest == src || src == 0)
+return (dest);
+while (src[a])
 {
-len++;
+dest[a] = src[a];
+a++;
 }
-
-for (; i < len; i++)
-{
-dest[i] = src[i];
-}
-dest[i] = '\0';
-
+dest[i] = 0;
 return (dest);
 }
 
