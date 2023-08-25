@@ -129,7 +129,7 @@ _wcfd('\n', fd);
 n = n->next;
 }
 
-_wc_to_fd(-1, fd);
+_wcfd(-1, fd);
 close(fd);
 return (1);
 }
