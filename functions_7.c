@@ -102,7 +102,7 @@ unsigned int a = 0;
 if (!h || !*h)
 return (0);
 
-if (ind == 0)
+if (!ind)
 {
 n = *h;
 *h = (*h)->next;
@@ -110,9 +110,8 @@ free(n->string);
 free(n);
 return (1);
 }
-
 n = *h;
-for (; n; a++, n = n->next)
+while (n)
 {
 if (a == ind)
 {
@@ -121,7 +120,9 @@ free(n->string);
 free(n);
 return (1);
 }
+a++;
 pn = n;
+n = n->next;
 }
 return (0);
 }
