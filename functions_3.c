@@ -15,7 +15,7 @@ unsigned int abs_val, curr_dig;
 
 if (fd == STDERR_FILENO)
 {
-__putchar = _w_stderr;
+__putchar = _wcstderr;
 }
 
 if (num < 0)
@@ -76,13 +76,13 @@ a++;
 */
 void _eprint(simpleshell_t *ss_info, char *str)
 {
-_w_str_stderr(ss_info->filename);
-_w_str_stderr(": ");
+_wsstderr(ss_info->filename);
+_wsstderr(": ");
 _decimalfd(ss_info->line_num, STDERR_FILENO);
-_w_str_stderr(": ");
-_w_str_stderr(ss_info->av[0]);
-_w_str_stderr(": ");
-_w_str_stderr(str);
+_wsstderr(": ");
+_wsstderr(ss_info->av[0]);
+_wsstderr(": ");
+_wsstderr(str);
 }
 
 /**
