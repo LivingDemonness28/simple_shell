@@ -74,7 +74,7 @@ return (ss_info->history_count = a);
  * @head: pointer to first node of the linked list.
  * Return: Size of list.
 */
-size_t _print_str(const list_t *head)
+size_t _print_str_ele(const list_t *head)
 {
 size_t a = 0;
 
