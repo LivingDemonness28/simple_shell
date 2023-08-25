@@ -59,23 +59,24 @@ return ((char *)h);
 
 /**
  * _strcmp - compare string values
- * @s1: input value
- * @s2: input value
- * Return: s1 < s2 (Neg), s1 > s2 (Pos), s1 == s2 (0)
+ * @str1: input value
+ * @str2: input value
+ * Return: str1 < str2 (Neg), str1 > str2 (Pos),
+ * str1 == str2 (0)
 */
-int _strcmp(char *s1, char *s2)
+int _strcmp(char *str1, char *str2)
 {
-int i = 0;
-
-while (s1[i] != '\0' && s2[i] != '\0')
+while (*str1 && *str2)
 {
-if (s1[i] != s2[i])
-{
-return (s1[i] - s2[i]);
+if (*str1 != *str2)
+return (*str1 - *str2);
+str1++;
+str2++;
 }
-i++;
-}
-return (0);
+if (*str1 == *str2)
+return (0)
+else
+return (*str1 < *str2 ? -1 : 1);
 }
 
 /**
