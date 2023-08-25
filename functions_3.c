@@ -72,7 +72,7 @@ void _eprint(simpleshell_t *ss_info, char *str)
 {
 _wsstderr(ss_info->filename);
 _wsstderr(": ");
-_decimalfd(ss_info->line_num, STDERR_FILENO);
+_dprint(ss_info->line_num, STDERR_FILENO);
 _wsstderr(": ");
 _wsstderr(ss_info->av[0]);
 _wsstderr(": ");
