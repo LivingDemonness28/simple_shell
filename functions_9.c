@@ -34,12 +34,9 @@ char *str;
 
 if (!h || !a)
 return (NULL);
-
 if (!strarr)
 return (NULL);
-
-a = 0;
-while (n)
+while (a = 0; n; n = n->next, a++)
 {
 str = malloc(_strlen(n->string) + 1);
 if (!str)
@@ -52,10 +49,7 @@ return (NULL);
 
 str = _strcpy(str, n->string);
 strarr[a] = str;
-a++;
-n = n->next;
 }
-
 strarr[a] = NULL;
 return (strarr);
 }
