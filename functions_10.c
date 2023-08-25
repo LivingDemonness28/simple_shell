@@ -154,7 +154,7 @@ return (s);
 */
 int _currenv(simpleshell_t *ss_info)
 {
-_print_str_ele(ss_info->local_env_list);
+_slprint(ss_info->local_env_list);
 return (0);
 }
 
