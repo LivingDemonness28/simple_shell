@@ -108,7 +108,7 @@ char *a = malloc(new_size);
 if (!ptr)
 return (malloc(new_size));
 if (!new_size)
-return (free(ptr), NULL)
+return (free(ptr), NULL);
 if (new_size == old_size)
 return (ptr);
 
