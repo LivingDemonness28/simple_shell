@@ -58,12 +58,12 @@ a++;
 }
 
 /**
-* _wc_to_fd - writes the c to given fd.
+* _wcfd - writes the c to given fd.
 * @c: the char.
 * @fd: file descriptor.
 * Return: 1 (Success), 0 (Otherwise).
 */
-int _wc_to_fd(char c, int fd)
+int _wcfd(char c, int fd)
 {
 static int a;
 static char buffer[1024];
@@ -87,7 +87,7 @@ return (1);
 */
 int _wsfd(char *str, int fd)
 {
-int a;
+int a = 0;
 
 if (!str)
 return (0);
