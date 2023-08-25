@@ -46,11 +46,12 @@ char *_envval(simpleshell_t *ss_info, const char *envvar)
 list_t *n = ss_info->local_env_list;
 char *val_ptr;
 
-for (; n; n = n->next)
+while (n)
 {
 val_ptr = _starts(n->string, envvar);
 if (val_ptr && *val_ptr)
 return (val_ptr);
+n = n->next;
 }
 return (NULL);
 }
@@ -63,6 +64,7 @@ return (NULL);
 int _exit_shell(simpleshell_t *ss_info)
 {
 int exit_code;
+
 if (ss_info->av[1])
 {
 exit_code = _eatoi(ss_info->av[1]);
