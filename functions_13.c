@@ -11,7 +11,7 @@ int a = 1;
 
 if (ss_info->ac == 1)
 {
-_w_str_stderr("Insufficient arguments \n");
+_wsstderr("Insufficient arguments \n");
 return (1);
 }
 for (; a <= ss_info->ac; a++)
