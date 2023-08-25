@@ -66,7 +66,7 @@ return (NULL);
 if (!del)
 del = " ";
 for (; str[a] != '\0'; a++)
-if (!_check_del(str[a], del) && (_check_del(str[a + 1], del) || !str[a + 1]))
+if (!_del(str[a], del) && (_check_del(str[a + 1], del) || !str[a + 1]))
 count_words++;
 
 if (count_words == 0)
