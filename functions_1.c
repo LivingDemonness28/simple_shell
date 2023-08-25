@@ -27,7 +27,7 @@ return (a);
 }
 
 /**
-* _check_del - checks if a char is delimiter.
+* _del - checks if a char is delimiter.
 * @ch: character check.
 * @del_str: delimiter string.
 * Return: 1 (Success), 0 (Otherwise)
