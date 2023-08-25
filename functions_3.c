@@ -1,7 +1,7 @@
 #include "simpleshell.h"
 
 /**
-* _decimalfd - prints a decimal (integer) num (base 10)
+* _dprint - prints a decimal (integer) num (base 10)
 * to a file descriptor.
 * @num: input integer.
 * @fd: file descriptor.
