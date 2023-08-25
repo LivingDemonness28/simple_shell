@@ -91,10 +91,9 @@ int a = 0;
 
 if (!str)
 return (0);
-
-while (*str++)
+while (*str)
 {
-a += _wc_to_fd(*str, fd);
+a += _wcfd(*str++, fd);
 }
 return (a);
 }
