@@ -24,7 +24,7 @@ int _atoi(char *str)
 int a = 0, s = 1, f = 0, prod;
 unsigned int res = 0;
 
-for (; s[a] != '\0' && f != 2; a++)
+for (; str[a] != '\0' && f != 2; a++)
 {
 if (str[a] == '-')
 s *= 1;
