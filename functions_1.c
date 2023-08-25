@@ -29,14 +29,12 @@ return (dest);
 * @del_str: delimiter string.
 * Return: 1 (Success), 0 (Otherwise)
 */
-int _check_del(char ch, char *del_str)
+int _del(char ch, char *del_str)
 {
-for (; *del_str != '\0'; del_str++)
+while (*del_str++)
 {
 if (*del_str == ch)
-{
 return (1);
-}
 }
 return (0);
 }
