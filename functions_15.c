@@ -157,8 +157,8 @@ ssize_t _exe_input(simpleshell_t *ss_info)
 {
 static char *buffer;
 static size_t a, b, clen;
-ssize_t cread = input_buf(ss_info, &buffer, &clen);
-char **input_ptr = &(ss_info->input_arg), *res;
+ssize_t cread = _input_buffer(ss_info, &buffer, &clen);
+char **input_ptr = &(ss_info->input_args), *res;
 
 _putchar(-1);
 if (cread == -1)
