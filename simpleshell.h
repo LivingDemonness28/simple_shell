@@ -100,7 +100,7 @@ int _putchar(char c);
 /*functions_2.c*/
 char *_strchr(char *str, char c);
 int _wcstderr(char c);
-void _w_str_stderr(char *str);
+void _wsstderr(char *str);
 int _wc_to_fd(char c, int fd);
 int _wsfd(char *str, int fd);
 /*functions_3.c*/
