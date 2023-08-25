@@ -74,7 +74,7 @@ str1++;
 str2++;
 }
 if (*str1 == *str2)
-return (0)
+return (0);
 else
 return (*str1 < *str2 ? -1 : 1);
 }
