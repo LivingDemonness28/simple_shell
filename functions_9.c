@@ -125,7 +125,7 @@ n = ss_info->cmd_hist;
 while (n)
 {
 _wsfd(n->string, fd);
-_wc_to_fd('\n', fd);
+_wcfd('\n', fd);
 n = n->next;
 }
 
