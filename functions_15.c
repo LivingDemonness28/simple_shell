@@ -52,7 +52,7 @@ return (e);
 */
 int _updt_cd(simpleshell_t *ss_info)
 {
-char *path = getcwd(buffer, 1024), *tar_dir, buffer[1024];
+char *tar_dir, buffer[1024], *path = getcwd(buffer, 1024);
 int res;
 
 if (!path)
