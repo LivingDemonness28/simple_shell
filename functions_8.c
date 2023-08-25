@@ -11,13 +11,14 @@ list_t *n, *nn, *h;
 
 if (!hp || !*hp)
 return;
-
 h = *hp;
-for (n = h; n; n = nn)
+n = h;
+while (n)
 {
 nn = n->next;
 free(n->string);
 free(n);
+n = nn;
 }
 *hp = NULL;
 }
