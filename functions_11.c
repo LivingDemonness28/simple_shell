@@ -68,8 +68,7 @@ if (!es)
 return (1);
 *es = 0;
 res =  _del_node_at_ind(&(ss_info->alias_node),
-_node_ind(ss_info->alias_node, _prefix_node(ss_info->alias_node,
-str, -1)));
+_node_ind(ss_info->alias_node, _prefix_node(ss_info->alias_node, str, -1)));
 *es = org_char;
 return (res);
 }
@@ -91,8 +90,7 @@ if (!*++es)
 return (_del_alias(ss_info, str));
 
 _del_alias(ss_info, str);
-return (_append_node(&(ss_info->alias_node), str,
-0) == NULL);
+return (_append_node(&(ss_info->alias_node), str, 0) == NULL);
 }
 
 /**
