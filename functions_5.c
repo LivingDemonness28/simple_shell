@@ -26,7 +26,7 @@ dest[b] = '\0';
 b++;
 }
 }
-return (s)
+return (s);
 }
 
 /**
@@ -36,18 +36,15 @@ return (s)
 */
 int _dis_alias(list_t *an)
 {
-char *equal_sign = NULL, *astr = NULL;
+char *es = NULL, *astr = NULL;
 
 if (an)
 {
-equal_sign = _strchr(an->string, '=');
-while (astr <= equal_sign)
-{
+es = _strchr(an->string, '=');
+for (astr = an->string; astr <= es; astr++)
 _putchar(*astr);
-astr++;
-}
 _putchar('\'');
-_puts(equal_sign + 1);
+_puts(es + 1);
 _puts("'\n");
 return (0);
 }
