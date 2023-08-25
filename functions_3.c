@@ -90,7 +90,6 @@ int a = 0;
 
 if (!str)
 return;
-
 while (str[a] != '\0')
 {
 _putchar(str[a]);
@@ -106,29 +105,18 @@ a++;
  */
 char *_strdup(const char *str)
 {
+int length = 0;
 char *dup;
-int length = 0, i;
 
 if (str == NULL)
-{
 return (NULL);
-}
-
-while (str[length] != '\0')
-{
+while (*str++)
 length++;
-}
-
 dup = malloc(sizeof(char) * (length + 1));
-
-if (dup == NULL)
-{
+if (!dup)
 return (NULL);
-}
 
-for (i = 0; i <= length; i++)
-{
-dup[i] = str[i];
-}
+for (length++; length--;)
+dup[length] = *--str;
 return (dup);
 }
