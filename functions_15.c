@@ -46,12 +46,11 @@ return (e);
 }
 
 /**
- * _updt_cd = changes current directory
+ * _updt_cd - changes current directory
  * @ss_info: simpleshell_t struct param.
  * Return: 0 (Always)
 */
 int _updt_cd(simpleshell_t *ss_info)
-int _mycd(simpleshell_t *ss_info)
 {
 char *path = getcwd(buffer, 1024), *tar_dir, buffer[1024];
 int res;
@@ -101,7 +100,7 @@ return (0);
  * it to the buffer.
  * @ss_info: simpleshell_t struct param.
  * @buffer: the buffer.
- * @len: current buffer length.
+ * @length: current buffer length.
  * Return: num of chars (Success), 0 (empty input),
  * -2 (Ends with backslash), -1 (Otherwise)
 */
@@ -146,7 +145,6 @@ else if (read_chars == -2)
 return (-2);
 }
 }
-
 return (read_chars);
 }
 
