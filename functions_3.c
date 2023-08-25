@@ -7,17 +7,14 @@
 * @fd: file descriptor.
 * Return: num of chars printed.
 */
-int _decimalfd(int num, int fd)
+int _dprint(int num, int fd)
 {
 int (*__putchar)(char) = _putchar;
 int a, total = 0;
 unsigned int abs_val, curr_dig;
 
 if (fd == STDERR_FILENO)
-{
 __putchar = _wcstderr;
-}
-
 if (num < 0)
 {
 abs_val = -num;
@@ -25,10 +22,7 @@ __putchar('-');
 total++;
 }
 else
-{
 abs_val = num;
-}
-
 curr_dig = abs_val;
 a = 1000000000;
 while (a > 1)
@@ -38,12 +32,12 @@ if (abs_val / a)
 __putchar('0' + curr_dig / a);
 total++;
 }
-
 curr_dig %= a;
 a /= 10;
 }
 __putchar('0' + curr_dig);
 total++;
+
 return (total);
 }
 
