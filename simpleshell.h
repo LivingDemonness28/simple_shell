@@ -104,7 +104,7 @@ void _wsstderr(char *str);
 int _wcfd(char c, int fd);
 int _wsfd(char *str, int fd);
 /*functions_3.c*/
-int _decimalfd(int num, int fd);
+int _dprint(int num, int fd);
 void _nocomments(char *buffer);
 void _eprint(simpleshell_t *ss_info, char *str);
 void _puts(char *str);
