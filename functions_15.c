@@ -83,8 +83,7 @@ res = chdir(ss_info->av[1]);
 if (res == -1)
 {
 _eprint(ss_info, "can't cd to ");
-_w_str_stderr(ss_info->av[1]);
-_w_stderr('\n');
+_wsstderr(ss_info->av[1]), _wcstderr('\n');
 }
 else
 {
