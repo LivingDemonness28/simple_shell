@@ -79,7 +79,7 @@ for (a = 0, b = 0; b < count_words; b++)
 while (_del(str[a], del))
 a++;
 c = 0;
-while (!_check_del(str[a + c], del) && str[a + c])
+while (!_del(str[a + c], del) && str[a + c])
 c++;
 s[b] = malloc((c + 1) * sizeof(char));
 if (!s[b])
