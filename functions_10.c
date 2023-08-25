@@ -76,7 +76,7 @@ if (!s)
 return (NULL);
 for (a = 0, b = 0; b < count_words; b++)
 {
-while (_check_del(str[a], del))
+while (_del(str[a], del))
 a++;
 c = 0;
 while (!_check_del(str[a + c], del) && str[a + c])
