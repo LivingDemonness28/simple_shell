@@ -11,11 +11,8 @@ char **curr_ptr = strarr;
 
 if (!strarr)
 return;
-
-for (; *strarr; strarr++)
-{
-free(*strarr);
-}
+while (*strarr)
+free(*strarr++);
 free(curr_ptr);
 }
 
