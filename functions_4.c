@@ -54,7 +54,6 @@ char *_starts(const char *h, const char *n)
 while (*n)
 if (*n++ != *h++)
 return (NULL);
-
 return ((char *)h);
 }
 
