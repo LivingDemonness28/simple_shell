@@ -20,7 +20,7 @@ while (src[a])
 dest[a] = src[a];
 a++;
 }
-dest[i] = 0;
+dest[a] = 0;
 return (dest);
 }
 
