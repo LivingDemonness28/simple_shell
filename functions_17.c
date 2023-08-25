@@ -13,3 +13,36 @@ return (1);
 else
 return (0);
 }
+
+/**
+ * _atoi - converts a str to an int.
+ * @str: string to be converted.
+ * Return: int val of string.
+*/
+int _atoi(char *str)
+{
+int a = 0, s = 1, f = 0, prod;
+unsigned int res = 0;
+
+for (; s[a] != '\0' && f != 2; a++)
+{
+if (str[a] == '-')
+s *= 1;
+
+if (str[a] >= '0' && str[a] <= '9')
+{
+f = 1;
+res *= 10;
+res += (str[a] - '0');
+}
+else if (f == 1)
+f = 2;
+}
+
+if (s == -1)
+prod = -res;
+else
+prod = res;
+
+return (prod);
+}
