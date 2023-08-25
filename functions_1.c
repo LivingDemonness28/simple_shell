@@ -49,7 +49,6 @@ return (0);
 */
 int _interact(simpleshell_t *ss_info)
 {
-if (isatty(STDIN_FILENO))
 return (isatty(STDIN_FILENO) && ss_info->rfd <= 2);
 }
 
