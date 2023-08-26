@@ -50,7 +50,7 @@ while (a != -1 && b_res != -2)
 _reset_info(ss_info);
 if (_interact(ss_info))
 _puts("$ ");
-_wcstderr(-1);
+_wcstderr(BF);
 a = _exe_input(ss_info);
 if (a != -1)
 {
