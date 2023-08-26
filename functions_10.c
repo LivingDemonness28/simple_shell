@@ -10,11 +10,12 @@ int _r_hist(simpleshell_t *ss_info)
 int a, last_index = 0, histcount = 0;
 struct stat st;
 char *buffer = NULL, *fname = _histfile(ss_info);
-ssize_t fd = open(fname, O_RDONLY), rdlen, fsize = 0;
+ssize_t fd, rdlen, fsize = 0;
 
 if (!fname)
 return (0);
 
+fd = open(fname, O_RDONLY);
 free(fname);
 if (fd == -1)
 return (0);
