@@ -48,7 +48,7 @@ int a = 0;
 list_t *n;
 char *b;
 
-while (a < 10)
+for (; a < 10; a++)
 {
 n = _prefix_node(ss_info->alias_node, ss_info->av[0], '=');
 if (!n)
@@ -63,7 +63,6 @@ return (0);
 ss_info->av[0] = b;
 }
 return (1);
-a++;
 }
 
 /**
