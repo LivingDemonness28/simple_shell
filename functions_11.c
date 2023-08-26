@@ -106,9 +106,11 @@ list_t *n = NULL;
 
 if (ss_info->ac == 1)
 {
-for (n = ss_info->alias_node; n; n = n->next)
+n = ss_info->alias_node;
+while (n)
 {
 _dis_alias(n);
+n = n->next;
 }
 return (0);
 }
