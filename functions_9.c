@@ -36,7 +36,7 @@ if (!h || !a)
 return (NULL);
 if (!strarr)
 return (NULL);
-while (a = 0; n; n = n->next, a++)
+for (a = 0; n; n = n->next, a++)
 {
 str = malloc(_strlen(n->string) + 1);
 if (!str)
