@@ -60,7 +60,7 @@ ss_info->custom_env = NULL;
 _free_ptr((void **)ss_info->command_buf);
 if (ss_info->rfd > 2)
 close(ss_info->rfd);
-_putchar(-1);
+_putchar(BF);
 }
 }
 
