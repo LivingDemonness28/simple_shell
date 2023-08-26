@@ -58,11 +58,11 @@ return (NULL);
 }
 
 /**
- * _exit_shell - exits shell.
+ * _ssexit - exits shell.
  * @ss_info: simpleshell_t struct param.
  * Return: exit with exit code.
 */
-int _exit_shell(simpleshell_t *ss_info)
+int _ssexit(simpleshell_t *ss_info)
 {
 int exit_code;
 
