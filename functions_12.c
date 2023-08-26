@@ -110,7 +110,7 @@ pointer = &buffer[49];
 do {
 *--pointer = arr[a % b];
 a /= b;
-} while (a != 0)
+} while (a != 0);
 
 if (s)
 *--pointer = s;
