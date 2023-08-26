@@ -147,10 +147,11 @@ ssize_t _exe_input(simpleshell_t *ss_info)
 {
 static char *buffer;
 static size_t a, b, clen;
-ssize_t cread = _input_buffer(ss_info, &buffer, &clen);
+ssize_t cread = 0;
 char **input_ptr = &(ss_info->input_args), *res;
 
 _putchar(-1);
+cread = _input_buffer(ss_info, &buffer, &clen);
 if (cread == -1)
 return (-1);
 if (clen)
