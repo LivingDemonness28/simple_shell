@@ -116,7 +116,7 @@ if ((_strlen(command) > 2) && _starts(command, "./"))
 if (_check_cmd(ss_info, command))
 return (command);
 }
-for (; 1; a++)
+while (1)
 {
 if (!str[a] || str[a] == ':')
 {
@@ -134,6 +134,7 @@ if (!str[a])
 break;
 cp = a;
 }
+a++;
 }
 return (NULL);
 }
