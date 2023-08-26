@@ -9,7 +9,7 @@ size_t _lprint(const list_t *head)
 {
 size_t a = 0;
 
-for (; head; a++)
+while (head)
 {
 _puts(_itoa(head->number, 10, 0));
 _putchar(':');
@@ -17,6 +17,7 @@ _putchar(' ');
 _puts(head->string ? head->string : "(nil)");
 _puts("\n");
 head = head->next;
+a++;
 }
 return (a);
 }
