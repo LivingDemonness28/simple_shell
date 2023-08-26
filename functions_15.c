@@ -155,6 +155,7 @@ if (clen)
 {
 b = a;
 res = buffer + a;
+
 _eval_chain(ss_info, buffer, &a, b, clen);
 while (a < clen)
 {
