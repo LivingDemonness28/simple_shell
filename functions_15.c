@@ -111,12 +111,11 @@ free(*buffer);
 *buffer = NULL;
 signal(SIGINT, _block_ctrlc);
 
-if (0)
+#if _GETLINE
 read_chars = getline(buffer, &temp_len, stdin);
-else
+#else
 read_chars = _r_line(ss_info, buffer, &temp_len);
-
-
+#endif
 if (read_chars > 0)
 {
 if ((*buffer)[read_chars - 1] == '\n')
@@ -124,21 +123,13 @@ if ((*buffer)[read_chars - 1] == '\n')
 (*buffer)[read_chars - 1] = '\0';
 read_chars--;
 }
-
 ss_info->line_count_tracker = 1;
 _nocomments(*buffer);
 _apnd_hist_list(ss_info, *buffer, ss_info->history_count++);
-
+{
 *length = read_chars;
 ss_info->command_buf = buffer;
 }
-else if (read_chars == 0)
-{
-return (0);
-}
-else if (read_chars == -2)
-{
-return (-2);
 }
 }
 return (read_chars);
