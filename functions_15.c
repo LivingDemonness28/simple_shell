@@ -113,7 +113,6 @@ if (!*length)
 free(*buffer);
 *buffer = NULL;
 signal(SIGINT, _block_ctrlc);
-
 #if _GETLINE
 read_chars = getline(buffer, &temp_len, stdin);
 #else
