@@ -14,7 +14,7 @@ static char buffer[1024];
 static size_t a, length;
 size_t b;
 ssize_t d = _r_buffer(ss_info, buffer, &length), e = 0;
-char *f = f = *pointer, *np = NULL, *c;
+char *f = *pointer, *np = NULL, *c;
 
 if (f && curr_len)
 e = *curr_len;
