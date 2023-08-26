@@ -106,9 +106,10 @@ s = '-';
 arr = f & 1 ? "0123456789abcdef" : "0123456789ABCDEF";
 *pointer = '\0';
 
-for (; a != 0; a /= b)
+while (a != 0)
 {
 *--pointer = arr[a % b];
+a /= b;
 }
 
 if (s)
