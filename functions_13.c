@@ -88,11 +88,11 @@ continue;
 }
 if (!_strcmp(ss_info->av[a], "$$"))
 {
-_repstr(&(ss_info->av[a]), _strdup(_itoa(getpid(), 10, 0)));
+_repstr(&(ss_info->av[a]),
+_strdup(_itoa(getpid(), 10, 0)));
 continue;
 }
-n = _prefix_node(ss_info->local_env_list,
-&ss_info->av[a][1], '=');
+n = _prefix_node(ss_info->local_env_list, &ss_info->av[a][1], '=');
 if (n)
 {
 _repstr(&(ss_info->av[a]),
@@ -100,6 +100,7 @@ _strdup(_strchr(n->string, '=') + 1));
 continue;
 }
 _repstr(&ss_info->av[a], _strdup(""));
+
 }
 return (0);
 }
