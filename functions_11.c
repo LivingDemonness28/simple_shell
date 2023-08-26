@@ -62,11 +62,14 @@ return (0);
 */
 int _del_alias(simpleshell_t *ss_info, char *str)
 {
-char *es = _strchr(str, '='), org_char = *es;
+char *es, org_char;
 int res;
 
+es = _strchr(str, '=');
 if (!es)
 return (1);
+
+org_char = *es;
 *es = 0;
 res =  _del_node_at_ind(&(ss_info->alias_node),
 _node_ind(ss_info->alias_node, _prefix_node(ss_info->alias_node, str, -1)));
