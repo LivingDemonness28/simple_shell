@@ -11,7 +11,7 @@ int _exe_cmd(simpleshell_t *ss_info)
 {
 int index = 0, res = -1;
 ss_table builtin_table[] = {
-{"exit", _exit_shell},
+{"exit", _ssexit},
 {"env", _currenv},
 {"help", _shell_help},
 {"history", _hprint},
