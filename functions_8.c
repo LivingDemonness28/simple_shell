@@ -32,11 +32,13 @@ n = nn;
 */
 list_t *_append_node(list_t **h, const char *str, int num)
 {
-list_t *nn = malloc(sizeof(list_t)), *n = *h;
+list_t *nn, *n;
 
 if (!h)
 return (NULL);
 
+n = *h;
+nn = malloc(sizeof(list_t));
 if (!nn)
 return (NULL);
 _memset((void *)nn, 0, sizeof(list_t));
