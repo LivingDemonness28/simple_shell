@@ -82,8 +82,8 @@ int history_count;
 /**
  * struct ss_builtin - struct to define built-in
  * commands and their corresponding funcs.
- * @cmd_type: name of the built-in command.
- * @cmd_func: pointer to the func that implements
+ * @type: name of the built-in command.
+ * @func: pointer to the func that implements
  * the built-in command
 */
 typedef struct ss_builtin
