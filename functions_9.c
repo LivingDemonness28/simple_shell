@@ -29,11 +29,11 @@ char **_strarr(list_t *h)
 {
 list_t *n = h;
 size_t a = _listlen(h), b;
-char **strarr = malloc(sizeof(char *) * (a + 1));
-char *str;
+char **strarr, *str;
 
 if (!h || !a)
 return (NULL);
+strarr = malloc(sizeof(char *) * (a + 1));
 if (!strarr)
 return (NULL);
 for (a = 0; n; n = n->next, a++)
