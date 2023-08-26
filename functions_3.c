@@ -110,7 +110,6 @@ length++;
 dup = malloc(sizeof(char) * (length + 1));
 if (!dup)
 return (NULL);
-
 for (length++; length--;)
 dup[length] = *--str;
 return (dup);
