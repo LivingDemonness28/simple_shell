@@ -54,9 +54,10 @@ return (e);
 */
 int _updt_cd(simpleshell_t *ss_info)
 {
-char *tar_dir, buffer[1024], *path = getcwd(buffer, 1024);
+char *tar_dir, buffer[1024], *path;
 int res;
 
+path = getcwd(buffer, 1024);
 if (!path)
 _puts("Error: Unable to retrieve current directory.\n");
 if (!ss_info->av[1])
