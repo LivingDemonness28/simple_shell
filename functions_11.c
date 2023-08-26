@@ -22,18 +22,19 @@ _putchar(-1);
 */
 int _updt_env(simpleshell_t *ss_info, char *envvar, char *envval)
 {
-char *buffer = malloc(_strlen(envvar) + _strlen(envval) + 2), *a;
-list_t *n = ss_info->local_env_list;
+char *buffer = NULL, *a;
+list_t *n;
 
 if (!envvar || !envval)
 return (0);
 
+buffer = malloc(_strlen(envvar) + _strlen(envval) + 2);
 if (!buffer)
 return (1);
 _strcpy(buffer, envvar);
 _strcat(buffer, "=");
 _strcat(buffer, envval);
-
+n = ss_info->local_env_list;
 while (n)
 {
 a = _starts(n->string, envvar);
