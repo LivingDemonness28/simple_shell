@@ -121,7 +121,7 @@ for (n = ss_info->cmd_hist; n; n = n->next)
 _wsfd(n->string, fd);
 _wcfd('\n', fd);
 }
-_wcfd(-1, fd);
+_wcfd(BF, fd);
 close(fd);
 return (1);
 }
