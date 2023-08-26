@@ -86,8 +86,9 @@ return (res);
 */
 int _add_alias(simpleshell_t *ss_info, char *str)
 {
-char *es = _strchr(str, '=');
+char *es;
 
+es = _strchr(str, '=');
 if (!es)
 return (1);
 if (!*++es)
