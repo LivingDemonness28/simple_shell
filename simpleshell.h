@@ -13,6 +13,8 @@
 #include <errno.h>
 #include <stddef.h>
 
+#define _GETLINE 0
+
 extern char **environ;
 
 #define EMPTY_INFO_INIT \
