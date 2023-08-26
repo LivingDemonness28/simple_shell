@@ -73,13 +73,11 @@ _puts(path);
 _putchar('\n');
 return (1);
 }
-_puts(_envval(ss_info, "SS_OLDPWD="));
-_putchar('\n');
+_puts(_envval(ss_info, "SS_OLDPWD=")), _putchar('\n');
 res = chdir((tar_dir = _envval(ss_info, "SS_OLDPWD=")) ? tar_dir : "/");
 }
 else
 res = chdir(ss_info->av[1]);
-
 if (res == -1)
 {
 _eprint(ss_info, "can't cd to ");
