@@ -45,7 +45,7 @@ int _exe_shell(simpleshell_t *ss_info, char **argv)
 ssize_t a = 0;
 int b_res = 0;
 
-for (; a != -1 && b_res != -2;)
+while (a != -1 && b_res != -2)
 {
 _reset_info(ss_info);
 if (_interact(ss_info))
