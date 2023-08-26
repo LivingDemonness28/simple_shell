@@ -94,7 +94,7 @@ return (0);
 char *_itoa(long int n, int b, int f)
 {
 static char *arr, buffer[50];
-char s = 0, *pointer = &buffer[49];
+char s = 0, *pointer;
 unsigned long a = n;
 
 if (!(f & 2) && n < 0)
@@ -104,13 +104,13 @@ s = '-';
 }
 
 arr = f & 1 ? "0123456789abcdef" : "0123456789ABCDEF";
+pointer = &buffer[49];
 *pointer = '\0';
 
-while (a != 0)
-{
+do {
 *--pointer = arr[a % b];
 a /= b;
-}
+} while (a != 0)
 
 if (s)
 *--pointer = s;
