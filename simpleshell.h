@@ -14,6 +14,9 @@
 #include <stddef.h>
 
 #define _GETLINE 0
+#define RBS 1024
+#define WBS 1024
+#define BF -1
 
 extern char **environ;
 
