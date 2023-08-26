@@ -45,7 +45,6 @@ void _clear_info(simpleshell_t *ss_info, int ff)
 _free_strarr(ss_info->av);
 ss_info->av = NULL;
 ss_info->cmd_path = NULL;
-
 if (ff)
 {
 if (!ss_info->command_buf)
