@@ -88,8 +88,8 @@ int history_count;
 */
 typedef struct ss_builtin
 {
-char *cmd_type;
-int (*cmd_func)(simpleshell_t *);
+char *type;
+int (*func)(simpleshell_t *);
 } ss_table;
 
 /*Function prototypes*/
