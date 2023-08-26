@@ -75,7 +75,7 @@ int _repvars(simpleshell_t *ss_info)
 int a = 0;
 list_t *n;
 
-while (ss_info->av[a])
+for (; ss_info->av[a]; a++)
 {
 if (ss_info->av[a][0] != '$' || !ss_info->av[a][1])
 continue;
@@ -88,11 +88,11 @@ continue;
 }
 if (!_strcmp(ss_info->av[a], "$$"))
 {
-_repstr(&(ss_info->av[a]),
-_strdup(_itoa(getpid(), 10, 0)));
+_repstr(&(ss_info->av[a]), _strdup(_itoa(getpid(), 10, 0)));
 continue;
 }
-n = _prefix_node(ss_info->local_env_list, &ss_info->av[a][1], '=');
+n = _prefix_node(ss_info->local_env_list,
+&ss_info->av[a][1], '=');
 if (n)
 {
 _repstr(&(ss_info->av[a]),
