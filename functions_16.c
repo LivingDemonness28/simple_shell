@@ -130,12 +130,9 @@ if (ss_info->line_count_tracker == 1)
 ss_info->line_num++;
 ss_info->line_count_tracker = 0;
 }
-while (ss_info->input_args[a])
-{
+for (; ss_info->input_args[a]; a++)
 if (!_del(ss_info->input_args[a], " \t\n"))
 b++;
-a++;
-}
 if (!b)
 return;
 
