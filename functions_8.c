@@ -72,10 +72,11 @@ return (nn);
 */
 list_t *_unshift_node(list_t **h, const char *str, int num)
 {
-list_t *nh = malloc(sizeof(list_t));
+list_t *nh;
 
 if (!h)
 return (NULL);
+nh = malloc(sizeof(list_t));
 if (!nh)
 return (NULL);
 _memset((void *)nh, 0, sizeof(list_t));
