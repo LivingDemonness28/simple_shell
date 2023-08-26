@@ -22,11 +22,11 @@ ss_table builtin_table[] = {
 {NULL, NULL}
 };
 
-for (; builtin_table[index].cmd_type; index++)
-if (_strcmp(ss_info->av[0], builtin_table[index].cmd_type) == 0)
+for (; builtin_table[index].type; index++)
+if (_strcmp(ss_info->av[0], builtin_table[index].type) == 0)
 {
 ss_info->line_num++;
-res = builtin_table[index].cmd_func(ss_info);
+res = builtin_table[index].func(ss_info);
 break;
 }
 return (res);
