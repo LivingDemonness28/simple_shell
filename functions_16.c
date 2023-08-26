@@ -84,8 +84,9 @@ return (b_res);
 */
 void _fork_exe(simpleshell_t *ss_info)
 {
-pid_t cpid = fork();
+pid_t cpid;
 
+cpid = fork();
 if (cpid == -1)
 {
 perror("Failed to fork process:");
