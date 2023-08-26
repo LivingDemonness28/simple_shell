@@ -87,7 +87,7 @@ ss_info->av[0] = _strdup(ss_info->input_args);
 ss_info->av[1] = NULL;
 }
 }
-for (; ss_info->av && ss_info->av[a]; a++)
+for (a = 0; ss_info->av && ss_info->av[a]; a++)
 ;
 ss_info->ac = a;
 
