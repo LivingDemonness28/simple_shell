@@ -26,10 +26,11 @@ free(curr_ptr);
 */
 ssize_t _r_buffer(simpleshell_t *ss_info, char *buffer, size_t *size)
 {
-ssize_t rbytes = read(ss_info->rfd, buffer, 1024);
+ssize_t rbytes;
 
 if (*size)
 return (0);
+rbytes = read(ss_info->rfd, buffer, 1024);
 if (rbytes >= 0)
 *size = rbytes;
 return (rbytes);
