@@ -31,7 +31,7 @@ char *es;
 if (!n || !envvar)
 return (0);
 
-for (; n; a++)
+while (n)
 {
 es = _starts(n->string, envvar);
 if (es && *es == '=')
