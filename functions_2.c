@@ -65,16 +65,15 @@ a++;
 int _wcfd(char c, int fd)
 {
 static int a;
-static char buffer[1024];
+static char buffer[WBS];
 
-if (c == -1 || a >= 1024)
+if (c == BF || a >= WBS)
 {
 write(fd, buffer, a);
 a = 0;
 }
-if (c != -1)
+if (c != BF)
 buffer[a++] = c;
-
 return (1);
 }
 
