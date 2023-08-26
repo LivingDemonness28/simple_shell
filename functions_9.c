@@ -81,18 +81,19 @@ return (0);
  */
 char *_histfile(simpleshell_t *ss_info)
 {
-char *buffer, *home_dir = _envval(ss_info, "SS_HOME=");
+char *buffer, *home_dir;
 
+home_dir = _envval(ss_info, "SS_HOME=");
 if (!home_dir)
 return (NULL);
 buffer = malloc(sizeof(char) * (_strlen(home_dir) +
-_strlen(".ss_history") + 2));
+_strlen(".simple_shell_history") + 2));
 if (!buffer)
 return (NULL);
 buffer[0] = 0;
 _strcpy(buffer, home_dir);
 _strcat(buffer, "/");
-_strcat(buffer, ".ss_history");
+_strcat(buffer, ".simple_shell_history");
 return (buffer);
 }
 
