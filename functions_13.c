@@ -116,12 +116,9 @@ char *_copy_chars(char *str, int begin, int end)
 static char buffer[1024];
 int a = begin, b = 0;
 
-while (a < end)
-{
+for (; a < end; a++)
 if (str[a] != ':')
 buffer[b++] = str[a];
-a++;
-}
 buffer[b] = 0;
 return (buffer);
 }
