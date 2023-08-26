@@ -106,12 +106,13 @@ return (buffer);
 int _w_hist(simpleshell_t *ss_info)
 {
 char *fname = _histfile(ss_info);
-ssize_t fd = open(fname, O_CREAT | O_TRUNC | O_RDWR, 0644);
+ssize_t fd;
 list_t *n = NULL;
 
 if (!fname)
 return (-1);
 
+fd = open(fname, O_CREAT | O_TRUNC | O_RDWR, 0644);
 free(fname);
 if (fd == -1)
 return (-1);
