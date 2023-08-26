@@ -105,7 +105,7 @@ return (_append_node(&(ss_info->alias_node), str, 0) == NULL);
 */
 int _alias(simpleshell_t *ss_info)
 {
-int a = 1;
+int a = 0;
 char *es = NULL;
 list_t *n = NULL;
 
@@ -119,7 +119,7 @@ n = n->next;
 }
 return (0);
 }
-for (; ss_info->av[a]; a++)
+for (a = 1; ss_info->av[a]; a++)
 {
 es = _strchr(ss_info->av[a], '=');
 if (es)
