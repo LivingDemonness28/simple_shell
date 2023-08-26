@@ -9,7 +9,7 @@ void _block_ctrlc(__attribute__((unused))int sn)
 {
 _puts("\n");
 _puts("$ ");
-_putchar(-1);
+_putchar(BF);
 }
 
 /**
