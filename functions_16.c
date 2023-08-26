@@ -123,7 +123,7 @@ _eprint(ss_info, "Execution permission denied\n");
 void _find_exe(simpleshell_t *ss_info)
 {
 char *cmd_path = NULL;
-int a = 0, b = 0;
+int a, b;
 
 ss_info->cmd_path = ss_info->av[0];
 if (ss_info->line_count_tracker == 1)
@@ -131,7 +131,7 @@ if (ss_info->line_count_tracker == 1)
 ss_info->line_num++;
 ss_info->line_count_tracker = 0;
 }
-for (; ss_info->input_args[a]; a++)
+for (a = 0, b = 0; ss_info->input_args[a]; a++)
 if (!_del(ss_info->input_args[a], " \t\n"))
 b++;
 if (!b)
