@@ -24,8 +24,7 @@ total++;
 else
 abs_val = num;
 curr_dig = abs_val;
-a = 1000000000;
-while (a > 1)
+for (a = 1000000000; a > 1; a /= 10)
 {
 if (abs_val / a)
 {
@@ -33,7 +32,6 @@ __putchar('0' + curr_dig / a);
 total++;
 }
 curr_dig %= a;
-a /= 10;
 }
 __putchar('0' + curr_dig);
 total++;
