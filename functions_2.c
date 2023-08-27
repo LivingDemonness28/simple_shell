@@ -48,7 +48,6 @@ int a = 0;
 
 if (!str)
 return;
-
 while (str[a] != '\0')
 {
 _wcstderr(str[a]);
