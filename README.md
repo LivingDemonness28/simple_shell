@@ -3,7 +3,7 @@
 <h2>Background Context</h2>
 <p>Write a simple UNIX command interpreter</p>
 
-!(alt-text)[https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/235/shell.jpeg]
+![alt-text](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/235/shell.jpeg)
 
 <h2>Tasks :page_with_curl:</h2>
 <h3>0.Betty would be proud</h3>
