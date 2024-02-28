@@ -99,4 +99,11 @@ void _puts(char *str);
 char *_strdup(const char *str);
 char *_strcpy(char *dest, char *src);
 
+/*functions_3.c*/
+char *_starts(const char *h, const char *n);
+int _strcmp(char *str1, char *str2);
+char *_strcat(char *dest, char *src);
+int _strlen(char *str);
+char *_memset(char *s, char b, unsigned int n);
+
 #endif
