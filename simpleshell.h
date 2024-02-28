@@ -113,4 +113,11 @@ ssize_t node_index(list_t *h, list_t *n);
 list_t _pre_node(list_t *n, char *pre, char c);
 size_t _list_len(const list_t *h);
 
+/*functions_5.c*/
+void free_list(list_t **hp);
+size_t plist_str(const list_t *h);
+int recount_hist(ss_t *ss_info);
+char *_strncpy(char *dest, char *src, int n);
+char *_strchr(char *str, char c);
+
 #endif
