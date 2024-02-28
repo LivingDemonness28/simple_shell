@@ -85,4 +85,8 @@ char *cmd_type;
 int (*func)(ss_t);
 } bi_table;
 
+int _del(char c, char *_del);
+int _interact(ss_t *ss_info);
+int _isalpha(int c);
+
 #endif
