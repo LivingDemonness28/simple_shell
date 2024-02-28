@@ -41,7 +41,7 @@ return (0);
  * _repstr - replace str
  * @o: old str
  * @n: new str
- * Returns: 1 (Replaced)
+ * Return: 1 (Replaced)
 */
 int _repstr(char **o, char *n)
 {
@@ -54,7 +54,7 @@ return (1);
  * _chain - check if continue chaining
  * based on last status
  * @ss_info: simpleshell struct param
- * @cbuf: buffer
+ * @buf: buffer
  * @pos: current buffer position
  * @a: starting pos
  * @len: buffer length
