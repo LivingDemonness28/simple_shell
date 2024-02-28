@@ -36,3 +36,49 @@ return (1);
 else
 return (0);
 }
+
+/**
+ * _repstr - replace str
+ * @o: old str
+ * @n: new str
+ * Returns: 1 (Replaced)
+*/
+int _repstr(char **o, char *n)
+{
+free(*o);
+*o = n;
+return (1);
+}
+
+/**
+ * _chain - check if continue chaining
+ * based on last status
+ * @ss_info: simpleshell struct param
+ * @cbuf: buffer
+ * @pos: current buffer position
+ * @a: starting pos
+ * @len: buffer length
+ * Return: Nothing
+*/
+void _chain(ss_t *ss_info, char *buf, size_t *pos, size_t a, size_t len)
+{
+size_t b = *pos;
+
+if (ss_info->cmd_b_type == 2)
+{
+if (ss_info->status)
+{
+buf[a] = 0;
+b = len;
+}
+}
+if (ss_info->cmd_b_type == 1)
+{
+if (!ss_info->status)
+{
+buf[a] = 0;
+b = len;
+}
+}
+*pos = b;
+}
