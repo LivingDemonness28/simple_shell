@@ -80,22 +80,22 @@ _putchar(str[a]);
 char *_strdup(const char *str)
 {
 int len = 0;
-char *returns;
+char *rets;
 
 if (!str)
-return(NULL);
-while(*str++)
+return (NULL);
+while (*str++)
 len++;
-returns = malloc(sizeof(char) * (len + 1));
-if (!returns)
+rets = malloc(sizeof(char) * (len + 1));
+if (!rets)
 return (NULL);
 
 len++;
 while (len--)
 {
-returns[len] = *--str;
+rets[len] = *--str;
 }
-return (returns);
+return (rets);
 }
 
 /**
