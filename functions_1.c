@@ -29,7 +29,8 @@ return (isatty(STDIN_FILENO) && ss_info->rfd <= 2);
  * @c: char
  * Return: 1 (Alphabetic char), 0 (Otherwise)
 */
-int _isalpha(int c) {
+int _isalpha(int c)
+{
 if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 return (1);
 else
