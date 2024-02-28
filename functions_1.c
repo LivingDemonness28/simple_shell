@@ -19,7 +19,7 @@ return (0);
  * @ss_info: simpleshell struct param
  * Return: 1 (True), 0 (Otherwise)
  */
-int _intect(ss_t *ss_info)
+int _interact(ss_t *ss_info)
 {
 return (isatty(STDIN_FILENO) && ss_info->rfd <= 2);
 }
