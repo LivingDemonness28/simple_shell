@@ -5,7 +5,7 @@
  * @ss_info: simpleshell struct param
  * @estr: string
  * Return: 0 (no numbers),
- * converted number (Otherwise), -1 (error) 
+ * converted number (Otherwise), -1 (error)
 */
 void _eprint(ss_t *ss_info, char *estr)
 {
