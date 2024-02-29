@@ -134,4 +134,11 @@ char *_itoa(long int num, int b, int f);
 int _eputchar(char c);
 void _eputs(char *str);
 
+/*functions_8.c*/
+int _putfd(char c, int fd);
+int _putsfd(char *str, int fd);
+char *_getenv(ss_t *ss_info, const char *env_var);
+int _print_env(ss_t *ss_info);
+int print_dec(int inp, int fd);
+
 #endif
