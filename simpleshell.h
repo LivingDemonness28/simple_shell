@@ -127,4 +127,11 @@ char *exe_path(ss_t *ss_info, char *pstr, char *cmd);
 char **list_str(list_t *h);
 char **load_env(ss_t *ss_info);
 
+/*function_7*/
+void _blockCtrlC(__attribute__((unused))int num);
+void _no_comment(char *buffer);
+char *_itoa(long int num, int b, int f);
+int _eputchar(char c);
+void _eputs(char *str);
+
 #endif
