@@ -52,7 +52,7 @@ typedef struct ss_info
 {
 char *arg;
 char **argv;
-char *path;
+char *cmd_path;
 int argc;
 unsigned int linecount;
 int errnum;
@@ -140,5 +140,12 @@ int _putsfd(char *str, int fd);
 char *_getenv(ss_t *ss_info, const char *env_var);
 int _print_env(ss_t *ss_info);
 int print_dec(int inp, int fd);
+
+/*functions_9.c*/
+void _eprint(ss_t *ss_info, char *estr);
+int print_alias(list_t *n);
+int _eatoi(char *s);
+void clear_info(ss_t *ss_info);
+ssize_t _rbuffer(ss_t *ss_info, char *buf, size_t *a);
 
 #endif
