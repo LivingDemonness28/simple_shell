@@ -95,9 +95,9 @@ _abs_ = inp;
 curr = _abs_;
 while (a > 1)
 {
-if (_abs_/a)
+if (_abs_ / a)
 {
-__putchar('0' + curr/a);
+__putchar('0' + curr / a);
 count++;
 }
 curr %= a;
