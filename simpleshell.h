@@ -176,4 +176,7 @@ int _unsetenv(ss_t *ss_info, char *env_var);
 int _setenv(ss_t *ss_info, char *env_var, char *env_val);
 char **strtow_1(char *str, char *del);
 
+/*functions_14.c*/
+char **strtow_2(char *str, char del);
+
 #endif
