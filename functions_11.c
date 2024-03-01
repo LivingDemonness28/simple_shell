@@ -5,7 +5,7 @@
  * @ss_info: simpleshell struct param
  * @ptr: pointer to buffer
  * @len: size of pointer buffer
- * Return: s
+ * Return: d
 */
 int _getline(ss_t *ss_info, char **ptr, size_t *len)
 {
