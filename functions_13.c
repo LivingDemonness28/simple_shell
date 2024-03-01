@@ -103,10 +103,10 @@ return (0);
 }
 
 /**
- * *strtow_1 - split string into words
+ * strtow_1 - split string into words
  * @str: string
  * @del: delim string
- * Retur: ptr to arr of strings (Success), NULL (Otherwise)
+ * Return: ptr to arr of strings (Success), NULL (Otherwise)
 */
 char **strtow_1(char *str, char *del)
 {
