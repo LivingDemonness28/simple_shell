@@ -115,7 +115,7 @@ if (last != a)
 _hist_list(ss_info, buffer + last, lc++);
 free(buffer);
 ss_info->_histline = lc;
-while (ss_info->_histline-->= 4096)
+while (ss_info->_histline-- >= 4096)
 del_node_ind(&(ss_info->hist), 0);
 recount_hist(ss_info);
 return (ss_info->_histline);
