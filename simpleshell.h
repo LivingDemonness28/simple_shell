@@ -155,4 +155,5 @@ int _repvars(ss_t *ss_info);
 int _free_ptr(void **ptr);
 char *_strncat(char *dest, char *src, int max_num);
 
+/*functions_11.c*/
 #endif
