@@ -148,4 +148,11 @@ int _eatoi(char *s);
 void clear_info(ss_t *ss_info);
 ssize_t _rbuffer(ss_t *ss_info, char *buf, size_t *a);
 
+/*functions_10.c*/
+int _shellExit(ss_t *ss_info);
+int _repalias(ss_t *ss_info);
+int _repvars(ss_t *ss_info);
+int _free_ptr(void **ptr);
+char *_strncat(char *dest, char *src, int max_num);
+
 #endif
