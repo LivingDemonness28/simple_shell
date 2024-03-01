@@ -14,6 +14,8 @@
 
 extern char **environ;
 
+#define USE_GETLINE 0
+
 /**
  * struct liststr - singly linked list
  * @number: number field
@@ -182,5 +184,12 @@ void _init_info(ss_t *ss_info, char *av);
 int _unsetenv2(ss_t *ss_info);
 int _setenv2(ss_t *ss_info);
 int unset_alias(ss_t *ss_info, char *str);
+
+/*functions_15*/
+int set_alias(ss_t *ss_info, char *str);
+int _alias(ss_t *ss_info);
+ssize_t input_buffer(ss_t *ss_info, char **buf, size_t *len);
+int _cd(ss_t *ss_info);
+ssize_t get_input(ss_t *ss_info);
 
 #endif
