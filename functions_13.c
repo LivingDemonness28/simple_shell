@@ -123,7 +123,7 @@ count++;
 
 if (count == 0)
 return (NULL);
-e = malloc((1 + count) * sizeof(char *));
+e = malloc((1 + count) *sizeof(char *));
 if (!e)
 return (NULL);
 for (a = 0, b = 0; b < count; b++)
