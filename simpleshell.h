@@ -156,4 +156,9 @@ int _free_ptr(void **ptr);
 char *_strncat(char *dest, char *src, int max_num);
 
 /*functions_11.c*/
+int _getline(ss_t *ss_info, char **ptr, size_t *len);
+void _clear_shell(ss_t *ss_info, int all);
+list_t *_append_node(list_t **h, const char *str, int num);
+int del_node_ind(list_t **h, unsigned int ind);
+list_t *push_node(list_t **h, const char *str, int num);
 #endif
