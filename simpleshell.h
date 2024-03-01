@@ -161,4 +161,12 @@ void _clear_shell(ss_t *ss_info, int all);
 list_t *_append_node(list_t **h, const char *str, int num);
 int del_node_ind(list_t **h, unsigned int ind);
 list_t *push_node(list_t **h, const char *str, int num);
+
+/*functionns_12.c*/
+int _hist_list(ss_t *ss_info, char *buf, int hist_lc);
+char *_hist_file(ss_t *ss_info);
+int _whist(ss_t *ss_info);
+int _rhist(ss_t *ss_info);
+size_t print_list(const list_t *h);
+
 #endif
