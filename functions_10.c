@@ -21,7 +21,7 @@ _eputchar('\n');
 return (1);
 }
 ss_info->errnum = _eatoi(ss_info->argv[1]);
-return(-2);
+return (-2);
 }
 ss_info->errnum = -1;
 return (-2);
