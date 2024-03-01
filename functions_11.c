@@ -1,7 +1,7 @@
 #include "simpleshell.h"
 
 /**
- * _geline - get next line of input from STDIN
+ * _getline - get next line of input from STDIN
  * @ss_info: simpleshell struct param
  * @ptr: pointer to buffer
  * @len: size of pointer buffer
