@@ -61,7 +61,7 @@ free(fname);
 if (fd == -1)
 return (-1);
 n = ss_info->hist;
-while(n)
+while (n)
 {
 _putsfd(n->str, fd);
 _putfd('\n', fd);
@@ -102,7 +102,7 @@ buffer[fsize] = 0;
 if (rdlen <= 0)
 return (free(buffer), 0);
 close(fd);
-while (a < fsize)
+for (; a < fsize; a++)
 {
 if (buffer[a] == '\n')
 {
@@ -110,13 +110,12 @@ buffer[a] = 0;
 _hist_list(ss_info, buffer + last, lc++);
 last = a + 1;
 }
-a++;
 }
 if (last != a)
 _hist_list(ss_info, buffer + last, lc++);
 free(buffer);
 ss_info->_histline = lc;
-while (ss_info->_histline-->=4096)
+while (ss_info->_histline-->= 4096)
 del_node_ind(&(ss_info->hist), 0);
 recount_hist(ss_info);
 return (ss_info->_histline);
