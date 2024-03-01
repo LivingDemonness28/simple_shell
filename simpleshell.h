@@ -169,4 +169,11 @@ int _whist(ss_t *ss_info);
 int _rhist(ss_t *ss_info);
 size_t print_list(const list_t *h);
 
+/*functions_13.c*/
+int _hist(ss_t *ss_info);
+int _fill_env_list(ss_t *ss_info);
+int _unsetenv(ss_t *ss_info, char *env_var);
+int _setenv(ss_t *ss_info, char *env_var, char *env_val);
+char **strtow_1(char *str, char *del);
+
 #endif
