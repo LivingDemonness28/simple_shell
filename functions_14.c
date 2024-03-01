@@ -1,3 +1,5 @@
+#include "simpleshell.h"
+
 /**
  * strtow_2 - splits a str into e.
  * @str: the input str.
@@ -40,4 +42,94 @@ e[b][d] = '\0';
 }
 e[b] = NULL;
 return (e);
+}
+
+/**
+ * _init_info - initialises shell info
+ * @ss_info: simpleshell struct param
+ * @av: arg vector
+ * Return: Nothing
+*/
+void _init_info(ss_t *ss_info, char *av)
+{
+int a = 0;
+
+ss_info->filename = av[0];
+if (ss_info->arg)
+{
+ss_info->argv = strtow_1(ss_info->arg, "\t");
+if (!ss_info->argv)
+{
+ss_info->argv = malloc(sizeof(char *) * 2);
+if (ss_info->argv)
+{
+ss_info->argv[0] = _strdup(ss_info->arg);
+ss_info->argv[1] = NULL;
+}
+}
+for (a = 0; ss_info->argv && ss_info->argv[a]; a++)
+;
+ss_info->argc = a;
+
+_repalias(ss_info);
+_repvars(ss_info);
+}
+}
+
+/**
+ * _unsetenv2 - Remove env var
+ * @ss_info: simpleshell struct param
+ * Return: 0 (Always)
+*/
+int _unsetenv2(ss_t *ss_info)
+{
+int a = 1;
+
+if (ss_info->argc == 1)
+{
+_eputs("Too few arguments. \n");
+return (1);
+}
+for (; a <= ss_info->argc; a++)
+_unsetenv(ss_info, ss_info->argv[a]);
+return (0);
+}
+
+/**
+ * _setenv2 - Init new env var, mode existing one
+ * @ss_info: simpleshell struct param
+ * Return: 0 (Always)
+*/
+int _setenv2(ss_t *ss_info)
+{
+if (ss_info->argc != 3)
+{
+_eputs("Incorrect number of arguements\n");
+return (1);
+}
+if (_setenv(ss_info, ss_info->argv[1], ss_info->argv[2]));
+return (0);
+return (1);
+}
+
+/**
+ * unset_alias - set alias to str
+ * @ss_info: simpleshell struct param
+ * @str: alias string
+ * Return: 0 (Success), 1 (Error)
+*/
+int unset_alias(ss_t *ss_info, char *str)
+{
+char *a, b;
+int rets;
+
+a = _strchr(str, '=');
+if (!a)
+return (1);
+b = *a;
+*a = 0;
+rets = del_node_ind(&(ss_info->_alias),
+node_index(ss_info->_alias, _pre_node(ss_info->_alias, str, -1)));
+*a = b;
+return (rets);
 }
