@@ -5,6 +5,7 @@
  * @ss_info: simpleshell struct param
  * @buf: buffer
  * @hist_lc: history linecount
+ * Return: 0 (Always)
 */
 int _hist_list(ss_t *ss_info, char *buf, int hist_lc)
 {
