@@ -33,7 +33,7 @@ return (p);
  * @arr: arr of strings
  * Return: Nothing
 */
-void _free_str(char *arr)
+void _free_str(char **arr)
 {
 char **op = arr;
 
