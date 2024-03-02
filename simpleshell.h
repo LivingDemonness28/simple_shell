@@ -199,4 +199,7 @@ int _help(ss_t *ss_info);
 int find_builtin(ss_t *ss_info);
 int hsh(ss_t *ss_info, char **av);
 
+/*main.c*/
+int main(int ac, char **av);
+
 #endif
