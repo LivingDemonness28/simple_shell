@@ -1,11 +1,11 @@
 #ifndef _SIMPLESHELL_H_
 #define _SIMPLESHELL_H_
 
-#include <stdlib>
+#include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
-#include <errno>
+#include <errno.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
