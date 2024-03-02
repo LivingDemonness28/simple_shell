@@ -192,4 +192,11 @@ ssize_t input_buffer(ss_t *ss_info, char **buf, size_t *len);
 int _cd(ss_t *ss_info);
 ssize_t get_input(ss_t *ss_info);
 
+/*functions_16.c*/
+void fork_cmd(ss_t *ss_info);
+void find_cmd(ss_t *ss_info);
+int _help(ss_t *ss_info);
+int find_builtin(ss_t *ss_info);
+int hsh(ss_t *ss_info, char **av);
+
 #endif
