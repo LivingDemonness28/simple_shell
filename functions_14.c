@@ -107,9 +107,7 @@ if (ss_info->argc != 3)
 _eputs("Incorrect number of arguements\n");
 return (1);
 }
-if (_setenv(ss_info,
-ss_info->argv[1],
-ss_info->argv[2]));
+if (_setenv(ss_info, ss_info->argv[1], ss_info->argv[2]))
 return (0);
 return (1);
 }
