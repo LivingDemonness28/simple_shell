@@ -71,7 +71,7 @@ return (-1);
  * @c: char after pre
  * Return: match node (Success), null (Otherwise)
 */
-list_t _pre_node(list_t *n, char *pre, char c)
+list_t *_pre_node(list_t *n, char *pre, char c)
 {
 char *ptr = NULL;
 
