@@ -19,7 +19,7 @@ if (child_pid == 0)
 if (execve(ss_info->cmd_path, ss_info->argv, load_env(ss_info)) == -1)
 {
 _clear_shell(ss_info, 1);
-if (errno = EACCES)
+if (errno == EACCES)
 exit(126);
 exit(1);
 }
