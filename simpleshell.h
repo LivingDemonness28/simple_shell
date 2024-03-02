@@ -112,7 +112,7 @@ char *_memset(char *s, char b, unsigned int n);
 char *dup_chars(char *pstr, int start, int stop);
 int _cmd(ss_t *ss_info, char *fp);
 ssize_t node_index(list_t *h, list_t *n);
-list_t _pre_node(list_t *n, char *pre, char c);
+list_t *_pre_node(list_t *n, char *pre, char c);
 size_t _list_len(const list_t *h);
 
 /*functions_5.c*/
