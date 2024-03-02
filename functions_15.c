@@ -122,7 +122,7 @@ _puts(a);
 _putchar('\n');
 return (1);
 }
-_puts(_getenv(ss_info,"OLDPWD=")), _putchar('\n');
+_puts(_getenv(ss_info, "OLDPWD=")), _putchar('\n');
 cd_ret = chdir((dir = _getenv(ss_info, "OLDPWD=")) ? dir : "/");
 }
 else
