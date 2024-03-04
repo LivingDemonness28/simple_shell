@@ -75,6 +75,7 @@ close(ss_info->rfd);
 _putchar(-1);
 }
 }
+
 /**
  * _append_node - adds a node to end of list
  * @h: ptr to head node
