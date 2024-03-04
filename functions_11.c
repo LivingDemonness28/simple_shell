@@ -68,7 +68,6 @@ if (ss_info->hist)
 free_list(&(ss_info->hist));
 if (ss_info->_alias)
 free_list(&(ss_info->_alias));
-
 _free_str(ss_info->environ);
 ss_info->environ = NULL;
 _free_ptr((void **)ss_info->cmd_buffer);
@@ -140,7 +139,7 @@ free(n);
 return (1);
 }
 n = *h;
-for (a = 0; n; a++)
+while (n)
 {
 if (a == ind)
 {
@@ -149,6 +148,7 @@ free(n->str);
 free(n);
 return (1);
 }
+a++;
 pn = n;
 n = n->next;
 }
