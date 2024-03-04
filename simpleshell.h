@@ -66,6 +66,7 @@ list_t *_alias;
 char **environ;
 int env_changed;
 int status;
+
 char **cmd_buffer;
 int cmd_b_type;
 int rfd;
