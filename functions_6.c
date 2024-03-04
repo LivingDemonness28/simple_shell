@@ -9,15 +9,16 @@
 */
 void *_realloc(void *ptr, unsigned int os, unsigned int ns)
 {
-char *p = malloc(ns);
+char *p;
 
 if (!ptr)
 return (malloc(ns));
 if (!ns)
-return (free(ptr), NULL)
+return (free(ptr), NULL);
 if (ns == os)
 return (ptr);
 
+p = malloc(ns);
 if (!p)
 return (NULL);
 
