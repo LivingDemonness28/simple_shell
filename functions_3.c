@@ -22,10 +22,12 @@ return ((char *)h);
 */
 int _strcmp(char *str1, char *str2)
 {
-for (; *str1 && *str2; str1++, str2++)
+while (*str1 && *str2)
 {
 if (*str1 != *str2)
-return (*str1 - *str2)
+return (*str1 - *str2);
+str1++;
+str2++;
 }
 if (*str1 == *str2)
 return (0);
@@ -79,10 +81,7 @@ char *_memset(char *s, char b, unsigned int n)
 {
 unsigned int a = 0;
 
-while (a < n)
-{
+for (; a < n; a++)
 s[a] = b;
-a++;
-}
 return (s);
 }
