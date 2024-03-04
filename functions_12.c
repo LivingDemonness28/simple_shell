@@ -62,11 +62,10 @@ free(fname);
 if (fd == -1)
 return (-1);
 n = ss_info->hist;
-while (n)
+for (n = ss_info->hist; n; n = n->next)
 {
 _putsfd(n->str, fd);
 _putfd('\n', fd);
-n = n->next;
 }
 _putfd(-1, fd);
 close(fd);
@@ -104,13 +103,11 @@ if (rdlen <= 0)
 return (free(buffer), 0);
 close(fd);
 for (; a < fsize; a++)
-{
 if (buffer[a] == '\n')
 {
 buffer[a] = 0;
 _hist_list(ss_info, buffer + last, lc++);
 last = a + 1;
-}
 }
 if (last != a)
 _hist_list(ss_info, buffer + last, lc++);
@@ -121,6 +118,7 @@ del_node_ind(&(ss_info->hist), 0);
 recount_hist(ss_info);
 return (ss_info->_histline);
 }
+
 /**
  * print_list - print ele in list_t linked list
  * @h: ptr to head node
