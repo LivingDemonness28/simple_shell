@@ -65,7 +65,7 @@ if ((_strlen(cmd) > 2) && _starts(cmd, "./"))
 if (_cmd(ss_info, cmd))
 return (cmd);
 }
-for (; 1; a++)
+while (1)
 {
 if (!pstr[a] || pstr[a] == ':')
 {
@@ -83,6 +83,7 @@ if (!pstr[a])
 break;
 pos = a;
 }
+a++;
 }
 return (NULL);
 }
@@ -106,12 +107,12 @@ for (a = 0; n; n = n->next, a++)
 {
 str = malloc(_strlen(n->str) + 1);
 if (!str)
-[
+{
 for (b = 0; b < a; b++)
 free(strs[b]);
 free(strs);
 return (NULL);
-]
+}
 
 str = _strcpy(str, n->str);
 strs[a] = str;
