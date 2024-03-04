@@ -21,11 +21,8 @@ int _fill_env_list(ss_t *ss_info)
 list_t *n = NULL;
 size_t a = 0;
 
-while (environ[a])
-{
+for (; environ[a]; a++)
 _append_node(&n, environ[a], 0);
-a++;
-}
 ss_info->env = n;
 return (0);
 }
@@ -133,7 +130,7 @@ a++;
 c = 0;
 while (!_del(str[a + c], del) && str[a + c])
 c++;
-e[b] = malloc((c + 1) * sizeof(char));
+e[b] = malloc((c + 1) *sizeof(char));
 if (!e[b])
 {
 for (c = 0; c < b; c++)
