@@ -18,7 +18,7 @@ a = 0;
 }
 if (c != -1)
 buffer[a++] = c;
-return (a);
+return (1);
 }
 
 /**
@@ -35,8 +35,9 @@ if (!str)
 return (0);
 while (*str)
 {
-a += _putfd
+a += _putfd(*str++, fd);
 }
+return (a);
 }
 
 /**
@@ -50,11 +51,12 @@ char *_getenv(ss_t *ss_info, const char *env_var)
 list_t *n = ss_info->env;
 char *p;
 
-for (; n; n = n->next)
+while (n)
 {
 p = _starts(n->str, env_var);
 if (p && *p)
 return (p);
+n = n->next;
 }
 return (NULL);
 }
