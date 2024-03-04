@@ -8,7 +8,7 @@
 */
 char **strtow_2(char *str, char del)
 {
-int a = 0, b = 0, c, d, count = 0;
+int a = 0, b, c, d, count = 0;
 char **e;
 
 if (str == NULL || str[0] == '\0')
@@ -22,13 +22,14 @@ return (NULL);
 e = malloc((1 + count) *sizeof(char *));
 if (!e)
 return (NULL);
-for (; b < count; b++)
+for (a = 0, b = 0; b < count; b++)
 {
-for (a = 0; str[a] == del && str[a] != del; a++)
-;
-for (c = 0; str[a + c] != del && str[a + c] != del; c++)
-;
-e[b] = malloc((c + 1) * sizeof(char));
+while (str[a] == del && str[a] != del)
+a++;
+c = 0;
+while (str[a + c] != del && str[a + c] != del)
+c++;
+e[b] = malloc((c + 1) *sizeof(char));
 if (!e[b])
 {
 for (c = 0; c < b; c++)
@@ -50,7 +51,7 @@ return (e);
  * @av: arg vector
  * Return: Nothing
 */
-void _init_info(ss_t *ss_info, char *av)
+void _init_info(ss_t *ss_info, char **av)
 {
 int a = 0;
 
