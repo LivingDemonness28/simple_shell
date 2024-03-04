@@ -8,7 +8,7 @@
 void _blockCtrlC(__attribute__((unused))int num)
 {
 _puts("\n");
-_puts("$ ")
+_puts("$ ");
 _putchar(-1);
 }
 
@@ -21,14 +21,11 @@ void _no_comment(char *buffer)
 {
 int a = 0;
 
-while (buffer[a] != '\0')
-{
+for (; buffer[a] != '\0'; a++)
 if (buffer[a] == '#' && (!a || buffer[a - 1] == ''))
 {
 buffer[a] = '\0';
 break;
-}
-a++;
 }
 }
 
@@ -54,11 +51,10 @@ arr = f & 1 ? "0123456789abcdef" : "0123456789ABCDEF";
 ptr = &buffer[49];
 *ptr = '\0';
 
-while (n != 0)
-{
+do {
 *--ptr = arr[n % b];
 n /= b;
-}
+} while (n != 0);
 
 if (sign)
 *--ptr = sign;
@@ -96,8 +92,9 @@ int a = 0;
 
 if (!str)
 return;
-for (; str[a] != '\0'; a++)
+while (str[a] != '\0')
 {
 _eputchar(str[a]);
+a++;
 }
 }
