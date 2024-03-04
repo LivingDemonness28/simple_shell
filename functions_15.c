@@ -15,6 +15,7 @@ if (!a)
 return (1);
 if (!*++p)
 return (unset_alias(ss_info, str));
+
 unset_alias(ss_info, str);
 return (_append_node(&(ss_info->_alias), str, 0) == NULL);
 }
@@ -26,7 +27,7 @@ return (_append_node(&(ss_info->_alias), str, 0) == NULL);
 */
 int _alias(ss_t *ss_info)
 {
-int a = 1;
+int a = 0;
 char *b = NULL;
 list_t *n = NULL;
 
@@ -40,7 +41,7 @@ n = n->next;
 }
 return (0);
 }
-for (; ss_info->argv[a]; a++)
+for (a = 1; ss_info->argv[a]; a++)
 {
 b = _strchr(ss_info->argv[a], '=');
 if (b)
@@ -84,7 +85,6 @@ a--;
 ss_info->linecount_flag = 1;
 _no_comment(*buf);
 _hist_list(ss_info, *buf, ss_info->_histline++);
-if (_strchr(*buf, ';'))
 {
 *len = a;
 ss_info->cmd_buffer = buf;
@@ -179,6 +179,7 @@ ss_info->cmd_b_type = 0;
 *buf_p = p;
 return (_strlen(p));
 }
+
 *buf_p = buffer;
 return (c);
 }
