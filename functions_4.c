@@ -75,11 +75,12 @@ list_t *_pre_node(list_t *n, char *pre, char c)
 {
 char *ptr = NULL;
 
-for (; n; n = n->next)
+while (n)
 {
 ptr = _starts(n->str, pre);
 if (ptr && ((c == -1) || (*ptr == c)))
 return (n);
+n = n->next;
 }
 return (NULL);
 }
