@@ -54,9 +54,10 @@ return (d);
 */
 void _clear_shell(ss_t *ss_info, int all)
 {
-_free_ptr((void **)&(ss_info->argv));
+_free_str(ss_info->argv);
 ss_info->argv = NULL;
 ss_info->cmd_path = NULL;
+
 if (all)
 {
 if (!ss_info->cmd_buffer)
@@ -67,7 +68,8 @@ if (ss_info->hist)
 free_list(&(ss_info->hist));
 if (ss_info->_alias)
 free_list(&(ss_info->_alias));
-_free_str((void **)&(ss_info->environ));
+
+_free_str(ss_info->environ);
 ss_info->environ = NULL;
 _free_ptr((void **)ss_info->cmd_buffer);
 if (ss_info->rfd > 2)
