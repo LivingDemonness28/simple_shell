@@ -13,11 +13,12 @@ if (!hp || !*hp)
 return;
 h = *hp;
 n = h;
-for (; n; n = nn)
+while (n)
 {
 nn = n->next;
 free(n->str);
 free(n);
+n = nn;
 }
 *hp = NULL;
 }
@@ -53,9 +54,10 @@ int recount_hist(ss_t *ss_info)
 list_t *n = ss_info->hist;
 int a = 0;
 
-for (; n; n = n->next)
+while (n)
 {
 n->number = a++;
+n = n->next;
 }
 return (ss_info->_histline = a);
 }
@@ -72,13 +74,15 @@ char *_strncpy(char *dest, char *src, int n)
 int a = 0, b;
 char *s = dest;
 
-for (; src[a] != '\0' && a < n - 1; a++)
+while (src[a] != '\0' && a < n - 1)
 {
 dest[a] = src[a];
+a++;
 }
 if (a < n)
 {
-for (b = a; b < n; b++)
+b = a
+for (b < n)
 {
 dest[b] = '\0';
 }
