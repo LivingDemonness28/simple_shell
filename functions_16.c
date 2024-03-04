@@ -7,8 +7,9 @@
 */
 void fork_cmd(ss_t *ss_info)
 {
-pid_t child_pid = fork();
+pid_t child_pid;
 
+child_pid = fork();
 if (child_pid == -1)
 {
 perror("Error:");
@@ -44,7 +45,7 @@ _eprint(ss_info, "Permission denied\n")
 void find_cmd(ss_t *ss_info)
 {
 char *path = NULL;
-int a = 0, b = 0;
+int a , b;
 
 ss_info->cmd_path = ss_info->argv[0];
 if (ss_info->linecount_flag == 1)
@@ -52,7 +53,7 @@ if (ss_info->linecount_flag == 1)
 ss_info->linecount++;
 ss_info->linecount_flag = 0;
 }
-for (; ss_info->arg[a]; a++)
+for (a = 0, b = 0; ss_info->arg[a]; a++)
 if (!_del(ss_info->arg[a], " \t\n"))
 b++;
 if (!b)
@@ -96,7 +97,7 @@ return (0);
 int find_builtin(ss_t *ss_info)
 {
 int a = 0, buitin_ret = -1;
-bi_table.builtinbl[] = {
+bi_table builtinbl[] = {
 {"exit", _shellExit},
 {"env", _print_env},
 {"help", _help},
