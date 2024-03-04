@@ -72,10 +72,6 @@ int rfd;
 int _histline;
 } ss_t;
 
-#define II \
-{NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
-0, 0, 0}
-
 /**
  * struct builtin - builtin str and func
  * @cmd_type: cmd flag
@@ -86,6 +82,10 @@ typedef struct builtin
 char *cmd_type;
 int (*func)(ss_t);
 } bi_table;
+
+#define II \
+{NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
+0, 0, 0}
 
 /*functions_1.c*/
 int _del(char c, char *_del);
