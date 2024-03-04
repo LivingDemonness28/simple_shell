@@ -38,7 +38,7 @@ int a = 0;
 list_t *n;
 char *p;
 
-while (a < 10)
+for (; a < 10; a++)
 {
 n = _pre_node(ss_info->_alias, ss_info->argv[0], '=');
 if (!n)
@@ -51,7 +51,6 @@ p = _strdup(p + 1);
 if (!p)
 return (0);
 ss_info->argv[0] = p;
-a++;
 }
 return (1);
 }
@@ -66,7 +65,7 @@ int _repvars(ss_t *ss_info)
 int a = 0;
 list_t *n;
 
-while (ss_info->argv[a])
+for (; ss_info->argv[a]; a++)
 {
 if (ss_info->argv[a][0] != '$' || !ss_info->argv[a][1])
 continue;
@@ -91,7 +90,6 @@ _strdup(_strchr(n->str, '=') + 1));
 continue;
 }
 _repstr(&ss_info->argv[a], _strdup(""));
-a++;
 }
 return (0);
 }
