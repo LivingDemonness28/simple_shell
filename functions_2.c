@@ -63,12 +63,13 @@ return (1);
 void _puts(char *str)
 {
 int a = 0;
+
 if (!str)
 return;
-
-for (; str[a] != '\0'; a++)
+while (str[a] != '\0')
 {
 _putchar(str[a]);
+a++;
 }
 }
 
