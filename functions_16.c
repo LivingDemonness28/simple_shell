@@ -45,7 +45,7 @@ _eprint(ss_info, "Permission denied\n")
 void find_cmd(ss_t *ss_info)
 {
 char *path = NULL;
-int a , b;
+int a ,b;
 
 ss_info->cmd_path = ss_info->argv[0];
 if (ss_info->linecount_flag == 1)
