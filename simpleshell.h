@@ -85,7 +85,7 @@ int _histline;
 typedef struct builtin
 {
 char *cmd_type;
-int (*func)(ss_t);
+int (*func)(ss_t *);
 } bi_table;
 
 /*functions_1.c*/
