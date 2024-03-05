@@ -36,8 +36,8 @@ return (EXIT_FAILURE);
 }
 ss_info->rfd = fd;
 }
-_fill_env_list(ss_info);
-_rhist(ss_info);
-hsh(ss_info, av);
+_fill_env_list(info);
+_rhist(info);
+hsh(info, av);
 return (EXIT_SUCCESS);
 }
