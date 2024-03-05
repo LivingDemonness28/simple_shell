@@ -9,14 +9,14 @@
 int _putfd(char c, int fd)
 {
 static int a;
-static char buffer[1024];
+static char buffer[W_BUF];
 
-if (c == -1 || a >= 1024)
+if (c == BUF_FLUSH || a >= W_BUF)
 {
 write(fd, buffer, a);
 a = 0;
 }
-if (c != -1)
+if (c != BUF_FLUSH)
 buffer[a++] = c;
 return (1);
 }
