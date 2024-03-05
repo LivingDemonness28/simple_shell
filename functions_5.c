@@ -82,9 +82,10 @@ a++;
 if (a < n)
 {
 b = a;
-for (b < n)
+while (b < n)
 {
 dest[b] = '\0';
+b++;
 }
 }
 return (s);
