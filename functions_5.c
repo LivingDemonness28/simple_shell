@@ -81,7 +81,7 @@ a++;
 }
 if (a < n)
 {
-b = a
+b = a;
 for (b < n)
 {
 dest[b] = '\0';
