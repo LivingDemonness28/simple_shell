@@ -88,7 +88,7 @@ int _help(ss_t *ss_info)
 char **arg_arr;
 
 arg_arr = ss_info->argv;
-_puts("Function not implemented \n")
+_puts("Function not implemented \n");
 return (0);
 if (0)
 _puts(*arg_arr);
