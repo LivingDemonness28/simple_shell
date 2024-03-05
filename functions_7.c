@@ -42,12 +42,12 @@ static char *arr, buffer[50];
 char sign = 0, *ptr;
 unsigned long n = num;
 
-if (!(f & 2) && num < 0)
+if (!(f & UNSIGNED) && num < 0)
 {
 n = -num;
 sign = '-';
 }
-arr = f & 1 ? "0123456789abcdef" : "0123456789ABCDEF";
+arr = f & LOWER ? "0123456789abcdef" : "0123456789ABCDEF";
 ptr = &buffer[49];
 *ptr = '\0';
 
