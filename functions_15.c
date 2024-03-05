@@ -13,7 +13,7 @@ char *a;
 a = _strchr(str, '=');
 if (!a)
 return (1);
-if (!*++p)
+if (!*++a)
 return (unset_alias(ss_info, str));
 
 unset_alias(ss_info, str);
