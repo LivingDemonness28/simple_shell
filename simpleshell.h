@@ -125,7 +125,7 @@ char *_strchr(char *str, char c);
 
 /*functions_6.c*/
 void *_realloc(void *ptr, unsigned int os, unsigned int ns);
-void _free_str(char *arr);
+void _free_str(char **arr);
 char *exe_path(ss_t *ss_info, char *pstr, char *cmd);
 char **list_str(list_t *h);
 char **load_env(ss_t *ss_info);
