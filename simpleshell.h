@@ -12,9 +12,21 @@
 #include <limits.h>
 #include <fcntl.h>
 
-extern char **environ;
+#define R_BUF 1024
+#define W_BUF 1024
+#define BUF_FLUSH -1
+
+#define CMD_NORM 0
+#define CMD_OR 1
+#define CMD_AND 2
+#define CMD_CHAIN 3
+
+#define LOWER 1
+#define UNSIGNED 2
 
 #define USE_GETLINE 0
+
+extern char **environ;
 
 /**
  * struct liststr - singly linked list
