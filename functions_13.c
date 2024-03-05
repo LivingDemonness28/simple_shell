@@ -115,7 +115,7 @@ return (NULL);
 if (!del)
 del = " ";
 for (; str[a] != '\0'; a++)
-if (!_del(str[a], d) && (_del(str[a + 1], del) || !str[a + 1]))
+if (!_del(str[a], del) && (_del(str[a + 1], del) || !str[a + 1]))
 count++;
 
 if (count == 0)
