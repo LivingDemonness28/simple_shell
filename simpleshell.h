@@ -181,7 +181,7 @@ char **strtow_1(char *str, char *del);
 
 /*functions_14.c*/
 char **strtow_2(char *str, char del);
-void _init_info(ss_t *ss_info, char *av);
+void _init_info(ss_t *ss_info, char **av);
 int _unsetenv2(ss_t *ss_info);
 int _setenv2(ss_t *ss_info);
 int unset_alias(ss_t *ss_info, char *str);
