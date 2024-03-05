@@ -32,7 +32,7 @@ if (WIFEXITED(ss_info->status))
 {
 ss_info->status = WEXITSTATUS(ss_info->status);
 if (ss_info->status == 126)
-_eprint(ss_info, "Permission denied\n")
+_eprint(ss_info, "Permission denied\n");
 }
 }
 }
@@ -85,6 +85,9 @@ _eprint(ss_info, "not found\n");
 */
 int _help(ss_t *ss_info)
 {
+char **arg_arr;
+
+arg_arr = ss_info->argv;
 return (0);
 }
 
