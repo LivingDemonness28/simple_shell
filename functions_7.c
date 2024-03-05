@@ -69,14 +69,14 @@ return (ptr);
 int _eputchar(char c)
 {
 static int a;
-static char buffer[1024];
+static char buffer[W_BUF];
 
-if (c == -1 || a >= 1024)
+if (c == BUF_FLUSH || a >= W_BUF)
 {
 write(2, buffer, a);
 a = 0;
 }
-if (c != -1)
+if (c != W_BUF)
 buffer[a++] = c;
 return (1);
 }
