@@ -117,7 +117,7 @@ bi_table builtinbl[] = {
 };
 
 for (; builtinbl[a].cmd_type; a++)
-if (_strcmp(ss_info->argv[0], builtinbl[a].type) == 0)
+if (_strcmp(ss_info->argv[0], builtinbl[a].cmd_type) == 0)
 {
 ss_info->linecount++;
 buitin_ret = builtinbl[a].func(ss_info);
