@@ -76,7 +76,7 @@ if (c == BUF_FLUSH || a >= W_BUF)
 write(2, buffer, a);
 a = 0;
 }
-if (c != W_BUF)
+if (c != BUF_FLUSH)
 buffer[a++] = c;
 return (1);
 }
