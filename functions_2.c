@@ -43,14 +43,14 @@ return (1);
 int _putchar(char c)
 {
 static int a;
-static char buf[1024];
+static char buf[W_BUF];
 
-if (c == -1 || a >= 1024)
+if (c == BUF_FLUSH || a >= W_BUF)
 {
 write(1, buf, a);
 a = 0;
 }
-if (c != 1)
+if (c != BUF_FLUSH)
 buf[a++] = c;
 return (1);
 }
