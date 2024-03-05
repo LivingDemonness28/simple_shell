@@ -29,7 +29,7 @@ a++;
 c = 0;
 while (str[a + c] != del && str[a + c] != del)
 c++;
-e[b] = malloc((c + 1) *sizeof(char));
+e[b] = malloc((c + 1) * sizeof(char));
 if (!e[b])
 {
 for (c = 0; c < b; c++)
