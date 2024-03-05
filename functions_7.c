@@ -22,7 +22,7 @@ void _no_comment(char *buffer)
 int a = 0;
 
 for (; buffer[a] != '\0'; a++)
-if (buffer[a] == '#' && (!a || buffer[a - 1] == ''))
+if (buffer[a] == '#' && (!a || buffer[a - 1] == ' '))
 {
 buffer[a] = '\0';
 break;
